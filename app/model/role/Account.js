@@ -15,6 +15,7 @@ Ext.define('SenchaTouchDemo.model.role.Account', {
         ]
     }
 });
+console.log('in here acc info model l................')
 /*
  因为 fields 写错 fileds ，耗了1天
  */

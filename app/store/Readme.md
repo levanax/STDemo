@@ -43,3 +43,13 @@ sorters:[
                 ]
             });
             console.log(genreStore)
+
+            //save data
+            var accounts = Ext.create('SenchaTouchDemo.store.role.Account',{
+                                        autoLoad:true,
+                                        data:data.UserLoginResponse.User.AccProfile
+                                    });
+
+            //read data
+            var accountsStore = Ext.data.StoreManager.lookup('account');
+            this.getAccountSel().setStore(accountsStore);

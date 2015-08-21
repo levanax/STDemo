@@ -29,13 +29,9 @@ Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
                     xtype: 'selectfield',
                     name:'market',
                     label: 'Market',
-                    displayField:'text',
-                    valueField:'value',
-                    options: [
-                        {text: 'First Option',  value: 'first'},
-                        {text: 'Second Option', value: 'second'},
-                        {text: 'Third Option',  value: 'third'}
-                    ]
+                    itemId:'market',
+                    displayField:'market',
+                    valueField:'market'
                 }, {
                     xtype: 'textfield',
                     name: 'buyPower',

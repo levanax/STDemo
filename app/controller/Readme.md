@@ -53,3 +53,26 @@ var userData = Ext.ModelManager.getModel('SenchaTouchDemo.model.role.Userdata');
                 var accounts = cached.data.AccProfile.Account;
             }
         });
+
+
+//store ajax proxy,params
+Ext.create('storeName',{params:{}});
+proxy: {
+        type: 'ajax',
+        url: setting.serverUrl + 'system/orderMarkets',
+        actionMethods: {
+            create  : 'POST',
+            read    : 'POST',
+            update  : 'POST',
+            destroy : 'POST'
+        },
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        useDefaultXhrHeader: false,
+        withCredentials: true,
+        reader: {
+            type: 'appReaderMarket'
+        }
+    }

@@ -4,7 +4,8 @@
 Ext.define('SenchaTouchDemo.controller.market.Trade',{
     extend:"Ext.app.Controller",
     requires:[
-        'SenchaTouchDemo.view.market.Trade'
+        'SenchaTouchDemo.view.market.Trade',
+        'SenchaTouchDemo.store.market.MarketList'
     ],
     config:{
         views:[
@@ -20,12 +21,11 @@ Ext.define('SenchaTouchDemo.controller.market.Trade',{
         }
     },
     initializer: function ( thisP, eOpts ) {
+        console.log('in here 0...');
         /*
         trade page data init ..
          */
-       /* var marketlist = Ext.create('SenchaTouchDemo.store.market.MarketList');
-        marketlist.load({
 
-        })*/
+
     }
 });

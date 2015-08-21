@@ -8,7 +8,8 @@ Ext.define('SenchaTouchDemo.controller.Login', {
         'SenchaTouchDemo.model.verify.Login',
         'SenchaTouchDemo.model.role.Userdata',
         'SenchaTouchDemo.store.role.Account',
-        'SenchaTouchDemo.model.role.Account'
+        'SenchaTouchDemo.model.role.Account',
+        'SenchaTouchDemo.store.Sessioninfo'
     ],
 
     config: {
@@ -55,9 +56,14 @@ Ext.define('SenchaTouchDemo.controller.Login', {
                         userData.set(data.UserLoginResponse.User);
                         userData.save();
 
-                        var accounts = Ext.create('SenchaTouchDemo.store.role.Account',{
+                        Ext.create('SenchaTouchDemo.store.role.Account',{
+                            autoLoad:true,
                             data:data.UserLoginResponse.User.AccProfile
                         });
+                        Ext.create('SenchaTouchDemo.store.Sessioninfo',{
+                            autoLoad:true,
+                            data:data
+                        })
 
                         Ext.Viewport.setActiveItem(
                             'viewer', {

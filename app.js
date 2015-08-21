@@ -17,7 +17,8 @@ Ext.application({
         'Ext.MessageBox',
         'SenchaTouchDemo.commons.Util',
         'SenchaTouchDemo.config.setting',
-        'SenchaTouchDemo.config.memoryDataList'
+        'SenchaTouchDemo.config.memoryDataList',
+        'SenchaTouchDemo.commons.override.Store'
     ],
 
     views: [
