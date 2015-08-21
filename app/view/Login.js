@@ -30,12 +30,13 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 autoComplete: false,
                 label: 'User Name',
                 placeHolder: 'Enter your username',
-                value: ''
+                value: 'mftst01'
             }, {
                 xtype: 'passwordfield',
                 autoComplete: false,
                 name: 'password',
                 label: 'Password',
+                value: '123456789',
                 maxLength: 16,
                 placeHolder: 'Enter your password'
             }]
@@ -43,11 +44,11 @@ Ext.define('SenchaTouchDemo.view.Login', {
             items: {
                 xtype: 'button',
                 centered: true,
-                ui: 'confirm',
+                ui: 'action',
                 action:'login',
                 text: 'Login',
                 itemId: 'loginBtn',
-                width: '50%',
+                width: '60%',
                 handler: function() {
                     // use the push() method to push another view. It works much like
                     // add() or setActiveItem(). it accepts a view instance, or you can give it

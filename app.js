@@ -14,7 +14,10 @@ Ext.application({
     name: 'SenchaTouchDemo',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'SenchaTouchDemo.commons.Util',
+        'SenchaTouchDemo.config.setting',
+        'SenchaTouchDemo.config.memoryDataList'
     ],
 
     views: [
@@ -23,6 +26,8 @@ Ext.application({
         'Login',
         'Setting',
         'market.Trade',
+        'market.Tradebuy',
+        'market.Tradesell',
         'role.Account',
         'role.OrderBook',
         'secondary.Second',
@@ -31,7 +36,9 @@ Ext.application({
     controllers: [
         'Viewer',
         'Login',
-        'market.Trade'
+        'market.Trade',
+        'market.Tradebuy',
+        'role.OrderBook'
     ],
 
     icon: {
@@ -57,7 +64,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        var view = Ext.create('SenchaTouchDemo.view.Viewer');
+        var view = Ext.create('SenchaTouchDemo.view.Login');
         Ext.Viewport.add(view);
 
     },

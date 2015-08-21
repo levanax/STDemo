@@ -2,28 +2,26 @@
  * Created by Levana.Xue on 8/13/2015.
  */
 Ext.define('SenchaTouchDemo.view.market.Trade',{
-    extend:'Ext.carousel.Carousel',
+    extend:'Ext.tab.Panel',
     xtype:'marketTrade',
     requires:[
-        'SenchaTouchDemo.controller.market.Trade'
+        'SenchaTouchDemo.view.market.Tradebuy'
     ],
     config:{
-        direction:'horizontal',
-        fullscreen: true,
-        defaults:{
-            styleHtmlContent:true
+        tabBar:{
+            width:'100%',
+            height:36,
+            cls:'topTabBar-trade'
         },
+
         items: [
             {
-                html : 'Item 1',
-                style: 'background-color: #5E99CC'
+                title: 'Buy',
+                xtype:'marketTradebuy'
             },
             {
-                html : 'Item 2',
-                style: 'background-color: #759E60'
-            },
-            {
-                html : 'Item 3'
+                title: 'Sell',
+                xtype:'marketTradesell'
             }
         ]
     }

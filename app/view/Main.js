@@ -11,6 +11,10 @@ Ext.define('SenchaTouchDemo.view.Main',{
     config: {
         title:'Order',
         tabBarPosition: 'bottom',
+        tabBar:{
+            width:'100%',
+            cls:'tabBarStyle'
+        },
         fullscreen: true,
         layout:'card',
         listeners:{
@@ -19,19 +23,20 @@ Ext.define('SenchaTouchDemo.view.Main',{
             {
                 title: 'Order',
                 iconCls: 'compose',
-                scrollable: false,
                 items:{
                     xtype: 'marketTrade',
-                    height:700
+                    height:'500em'
                 }
             },
             {
                 title: 'OrderBook',
                 iconCls: 'bookmarks',
-                scrollable: true,
+                scrollable: {
+                    indicators: false //隐藏滚动条
+                },
                 items:{
                     xtype:'orderBook',
-                    height:700
+                    cls:'FullscreenStyle'
                 }
             },
             {

@@ -4,7 +4,11 @@
 Ext.define('SenchaTouchDemo.controller.Login', {
     extend: 'Ext.app.Controller',
     requires: [
-        'SenchaTouchDemo.model.verify.Login'
+        'Ext.data.StoreManager',
+        'SenchaTouchDemo.model.verify.Login',
+        'SenchaTouchDemo.model.role.Userdata',
+        'SenchaTouchDemo.store.role.Account',
+        'SenchaTouchDemo.model.role.Account'
     ],
 
     config: {
@@ -24,14 +28,13 @@ Ext.define('SenchaTouchDemo.controller.Login', {
         }
     },
     doLogin: function (thisP, eP, eOptsP) {
-        console.log('in doLogin  ...');
         //表单验证
         var params = thisP.up('login').getValues();
         var model = Ext.create('SenchaTouchDemo.model.verify.Login', params);
         var errors = model.validate();
         if (errors.isValid()) {
             Ext.Ajax.request({
-                url: 'http://192.168.1.7:3030/login/submit',
+                url: setting.serverUrl + 'login/submit',
                 method: 'POST',
                 params: params,
                 withCredentials: true,
@@ -41,21 +44,33 @@ Ext.define('SenchaTouchDemo.controller.Login', {
                 },
                 useDefaultXhrHeader: false,
                 success: function (response) {
-                    console.log(response);
-                    var text = response.responseText;
-                    // process server response here
+                    var data = JSON.parse(response.responseText);
+                    if(typeof data.UserLoginResponse.User.SysCode !== 'undefined'){
+                        util.Msg.alert(data.UserLoginResponse.User.SysMsg);
+                    }else{
+                        // process server response here
+                            var userData = Ext.create('SenchaTouchDemo.model.role.Userdata',{
+                                id:constant.userDataId
+                            });
+                        userData.set(data.UserLoginResponse.User);
+                        userData.save();
 
-                    Ext.Viewport.setActiveItem(
-                        'main', {
-                            type: 'slide',
-                            direction: 'right'
+                        var accounts = Ext.create('SenchaTouchDemo.store.role.Account',{
+                            data:data.UserLoginResponse.User.AccProfile
                         });
+
+                        Ext.Viewport.setActiveItem(
+                            'viewer', {
+                                type: 'slide',
+                                direction: 'right'
+                            });
+                    }
                 }
             });
         } else {
             //console.log(errors.getByField('password'));
             var errorChar = errors.all[0]._message;
-            Ext.Msg.alert(errorChar);
+            util.Msg.alert(errorChar);
         }
     },
     toMain:function(){

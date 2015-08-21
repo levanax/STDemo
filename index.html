@@ -48,24 +48,62 @@
                 opacity: 0.8
             }
         }
-         .tableStyle-div-item{
-             padding: 1px 2px 2px 1px;
-             width: 100%;
+         /* table style */
+         .tableStyle-div-title div div{
+             color: #FFFFFF;
+             text-align: center;
+             background-color:#7088AD;
          }
-        .tableStyle-div-item div{
+         .tableStyle-div-title,.tableStyle-div-container{
+             width:750px;
+             overflow:auto;
+         }
+         .tableStyle-div-title div,.tableStyle-div-container div{
+             width:850px;
+             padding: 1px 2px 2px 1px;
+         }
+         .tableStyle-div-title div div,.tableStyle-div-container div div{
             padding: 1px 2px 2px 1px;
             cursor: default;
-
             border: 1px solid transparent;
             border-right: 1px dotted silver;
             border-bottom-color: silver;
             float: left;
-            width: 33%;
-            height: 50px;
+            width: 100px;
             list-style-type: none;
             text-align: center;
-            line-height: 50px;
+            line-height: 35px;
         }
+         .tableStyle-div-title .firstChild,.tableStyle-div-container .firstChild{
+            min-width: 200px !important;
+        }
+         /* tab bar */
+        .tabBarStyle div div{
+            width:24%;
+        }
+         .orderBtnArea div div{
+             float:left;
+             margin-left:25px;
+         }
+        .FullscreenStyle{
+            height:700px;
+        }
+         .topTabBar-trade div div{
+             width:50%;
+         }
+
+         .message .x-mask-inner {
+             background-color:Black;
+             font-size:0.9em;
+             -moz-border-radius:3px;
+             -webkit-border-radius:3px;
+             border-radius:3px;
+             top:7em;
+         }
+         .message .x-mask-message {
+             line-height:1.8em;
+             padding:0 0.3em;
+         }
     </style>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src=".sencha/app/microloader/development.js"></script>

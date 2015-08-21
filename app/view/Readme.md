@@ -5,9 +5,14 @@ This folder contains the views
 
 *2.勿用关键字['container']
 
+*3. 被包含的 view.panel 不要设置 fullscreen为true
+
 Ext.navigation.View 是可以套 Ext.tab.Panel,在cofig处设置 title 更改title
 --
 View.push({
                         title: 'Setting',
                         html: 'this is Setting view!'
                     });
+
+
+

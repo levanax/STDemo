@@ -1,23 +1,31 @@
 /**
- * Created by Levana.Xue on 8/12/2015.
+ * Created by Levana.Xue on 8/20/2015.
  */
-Ext.define('SenchaTouchDemo.controller.market.Trade', {
-    extend: 'Ext.app.Controller',
-    requires: [],
-    init: function () {
-        //app 初始化时 执行一次
-        console.log('in init()...');
-    },
-    config: {
-        views: [
+Ext.define('SenchaTouchDemo.controller.market.Trade',{
+    extend:"Ext.app.Controller",
+    requires:[
+        'SenchaTouchDemo.view.market.Trade'
+    ],
+    config:{
+        views:[
             'SenchaTouchDemo.view.market.Trade'
-        ], control: {},
-        refs: {}
+        ],
+        refs:{
+            marketTradeView:'marketTrade'
+        },
+        control:{
+            marketTradeView:{
+                initialize:'initializer'
+            }
+        }
     },
-    launch: function () {
-        console.log('in launch...')
-    },
-    test: function () {
+    initializer: function ( thisP, eOpts ) {
+        /*
+        trade page data init ..
+         */
+       /* var marketlist = Ext.create('SenchaTouchDemo.store.market.MarketList');
+        marketlist.load({
 
+        })*/
     }
 });

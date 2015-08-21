@@ -43,3 +43,13 @@ mainView.push(Ext.create('SenchaTouchDemo.view.Home'));
 //resolve Ext.navigation.View nest Ext.tab.panel ,title problem
 ref url:
 http://stackoverflow.com/questions/14866695/sencha-touch-navigation-view-changing-title-does-not-work-on-back-button
+
+
+//读取已存入model 的数据
+var userData = Ext.ModelManager.getModel('SenchaTouchDemo.model.role.Userdata');
+        userData.load(constant.userDataId,{
+            scope:this,
+            success:function(cached){
+                var accounts = cached.data.AccProfile.Account;
+            }
+        });

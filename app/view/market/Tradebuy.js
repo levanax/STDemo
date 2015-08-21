@@ -2,13 +2,16 @@
  * Created by Levana.Xue on 8/11/2015.
  */
 
-Ext.define('SenchaTouchDemo.view.market.Trade',{
+Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
     extend:'Ext.form.Panel',
-    xtype:'marketTrade',
+    xtype:'marketTradebuy',
     requires:[
         'Ext.form.FieldSet',
+        'Ext.field.Select',
         'Ext.field.Text',
-        'SenchaTouchDemo.controller.market.Trade'
+        'Ext.field.DatePicker',
+        'Ext.field.Spinner',
+        'SenchaTouchDemo.controller.market.Tradebuy'
     ],
     config:{
         disableSelection: true,
@@ -19,15 +22,15 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
                     xtype: 'selectfield',
                     name:'account',
                     label: 'Account',
-                    options: [
-                        {text: 'First Option',  value: 'first'},
-                        {text: 'Second Option', value: 'second'},
-                        {text: 'Third Option',  value: 'third'}
-                    ]
+                    itemId:'account',
+                    displayField:'exhibit',
+                    valueField:'AccNum'
                 },{
                     xtype: 'selectfield',
                     name:'market',
                     label: 'Market',
+                    displayField:'text',
+                    valueField:'value',
                     options: [
                         {text: 'First Option',  value: 'first'},
                         {text: 'Second Option', value: 'second'},
@@ -41,14 +44,6 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
                     placeHolder: '',
                     value: '1000,00',
                     readOnly:true
-                },{
-                    xtype: 'selectfield',
-                    name: 'side',
-                    label: 'Side',
-                    options: [
-                        {text: 'Buy',  value: 'B'},
-                        {text: 'Sell',  value: 'S'}
-                    ]
                 }, {
                     xtype: 'textfield',
                     name: 'code',
@@ -63,15 +58,19 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
                     options: [
                     ]
                 }, {
-                    xtype: 'textfield',
+                    xtype: 'spinnerfield',
                     name: 'price',
+                    minValue:0,
+                    stepValue : 0.5,
                     autoComplete: false,
                     label: 'Price',
                     placeHolder: '',
                     value: ''
                 }, {
-                    xtype: 'textfield',
+                    xtype: 'spinnerfield',
                     name: 'quantity',
+                    minValue:0,
+                    stepValue : 1000,
                     autoComplete: false,
                     label: 'Quantity',
                     placeHolder: '',
@@ -86,6 +85,7 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
                 },{
                     xtype: 'fieldset',
                     border:0,
+                    baseCls:'orderBtnArea',
                     items:[
                         {
                             xtype: 'button',
@@ -109,7 +109,7 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
         ]
     },
     initialize:function(){
-        console.log('initialize trade ...')
+        //console.log('initialize trade ...')
 
     }
 });
