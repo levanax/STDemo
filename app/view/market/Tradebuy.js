@@ -21,14 +21,12 @@ Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
                 items: [{
                     xtype: 'selectfield',
                     name:'account',
-                    label: 'Account',
                     itemId:'account',
                     displayField:'exhibit',
                     valueField:'AccNum'
                 },{
                     xtype: 'selectfield',
                     name:'market',
-                    label: 'Market',
                     itemId:'market',
                     displayField:'market',
                     valueField:'market'

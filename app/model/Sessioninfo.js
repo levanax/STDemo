@@ -15,4 +15,3 @@ Ext.define('SenchaTouchDemo.model.Sessioninfo', {
         ]
     }
 });
-console.log('in here session info model l................')

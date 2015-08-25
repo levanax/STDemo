@@ -15,4 +15,3 @@ Ext.define('SenchaTouchDemo.store.Sessioninfo',{
         }
     }
 });
-console.log('in here session info store l................')

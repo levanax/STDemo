@@ -4,18 +4,16 @@
 Ext.define('SenchaTouchDemo.controller.Login', {
     extend: 'Ext.app.Controller',
     requires: [
-        'Ext.data.StoreManager',
         'SenchaTouchDemo.model.verify.Login',
         'SenchaTouchDemo.model.role.Userdata',
         'SenchaTouchDemo.store.role.Account',
-        'SenchaTouchDemo.model.role.Account',
         'SenchaTouchDemo.store.Sessioninfo'
     ],
 
     config: {
-        views: [
-            'SenchaTouchDemo.view.Login'
-        ],
+        /*views: [
+            'SenchaTouchDemo.view.Login' //避免在ctrl -> config 引入view
+        ],*/
         control: {
             loginButton: {
                 tap: 'doLogin'
@@ -64,6 +62,7 @@ Ext.define('SenchaTouchDemo.controller.Login', {
                             autoLoad:true,
                             data:data
                         })
+                        console.log(i18n.t("button.login"))
 
                         Ext.Viewport.setActiveItem(
                             'viewer', {

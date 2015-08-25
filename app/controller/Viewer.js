@@ -7,7 +7,8 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
 
     ],
     config:{
-        views:['SenchaTouchDemo.view.Viewer','SenchaTouchDemo.view.Main'],
+        //views写在此处作用是：若views 未初始化，便自动初始化
+        views:['SenchaTouchDemo.view.Viewer'],
         refs:{
             navView:'viewer',
             tabView:'main'

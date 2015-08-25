@@ -11,9 +11,6 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
         //console.log('in init()...');
     },
     config: {
-        views: [
-            'SenchaTouchDemo.view.market.Tradebuy'
-        ],
         refs: {
             marketTradebuyView:'marketTradebuy',
             accountSel:'selectfield[itemId=account]',
@@ -43,7 +40,6 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
             }
         });
         marketlist.load();
-        console.log(marketlist)
         this.getMarketSel().setStore(marketlist);
 
     }

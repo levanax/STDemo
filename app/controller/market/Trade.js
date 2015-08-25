@@ -8,9 +8,6 @@ Ext.define('SenchaTouchDemo.controller.market.Trade',{
         'SenchaTouchDemo.store.market.MarketList'
     ],
     config:{
-        views:[
-            'SenchaTouchDemo.view.market.Trade'
-        ],
         refs:{
             marketTradeView:'marketTrade'
         },

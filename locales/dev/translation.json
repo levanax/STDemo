@@ -1,0 +1,9 @@
+{
+  "appName":"测试证券",
+  "button":{
+    "login":"button.login"
+  },
+  "menus":{
+    "account":"menus.account"
+  }
+}

@@ -1,6 +1,7 @@
 /**
  * Created by Levana.Xue on 8/7/2015.
  */
+console.log('login view ....');
 Ext.define('SenchaTouchDemo.view.Login', {
     extend: 'Ext.form.Panel',
     id:'login',
@@ -14,12 +15,11 @@ Ext.define('SenchaTouchDemo.view.Login', {
     ],
 
     config: {
-        title:'Test security',
         disableSelection: true,
         items: [{
                 docked: 'top',
                 xtype: 'titlebar',
-                title: 'Test security'
+                title: i18n.t('INDEX_TITLE')
         }, {
             height:30
         }, {
@@ -28,14 +28,12 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 xtype: 'textfield',
                 name: 'name',
                 autoComplete: false,
-                label: 'User Name',
                 placeHolder: 'Enter your username',
                 value: 'mftst01'
             }, {
                 xtype: 'passwordfield',
                 autoComplete: false,
                 name: 'password',
-                label: 'Password',
                 value: '123456789',
                 maxLength: 16,
                 placeHolder: 'Enter your password'
@@ -46,9 +44,9 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 centered: true,
                 ui: 'action',
                 action:'login',
-                text: 'Login',
+                text:i18n.t("LOGIN.LOGIN_BTN"),
                 itemId: 'loginBtn',
-                width: '60%',
+                width: '95%',
                 handler: function() {
                     // use the push() method to push another view. It works much like
                     // add() or setActiveItem(). it accepts a view instance, or you can give it

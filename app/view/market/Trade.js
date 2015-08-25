@@ -5,7 +5,8 @@ Ext.define('SenchaTouchDemo.view.market.Trade',{
     extend:'Ext.tab.Panel',
     xtype:'marketTrade',
     requires:[
-        'SenchaTouchDemo.view.market.Tradebuy'
+        'SenchaTouchDemo.view.market.Tradebuy',
+        'SenchaTouchDemo.view.market.Tradesell'
     ],
     config:{
         tabBar:{

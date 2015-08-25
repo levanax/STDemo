@@ -6,7 +6,9 @@ Ext.define('SenchaTouchDemo.view.Main',{
     id:'main',
     xtype: 'main',
     requires: [
-        'SenchaTouchDemo.view.market.Trade'
+        'SenchaTouchDemo.view.market.Trade',
+        'SenchaTouchDemo.view.role.Account',
+        'SenchaTouchDemo.view.role.OrderBook'
     ],
     config: {
         title:'Order',
@@ -51,7 +53,7 @@ Ext.define('SenchaTouchDemo.view.Main',{
                 ].join("")
             },
             {
-                title: 'Account',
+                title:'Account',
                 iconCls: 'user',
                 scrollable: true,
 
