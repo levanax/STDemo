@@ -17,16 +17,19 @@ Ext.onReady(function () {
     };
     i18n.init(option);
 })
+Ext.Loader.setPath({
+    'ux':'app/ux'
+})
 Ext.application({
     name: 'SenchaTouchDemo',
     appFolder:'app',
     requires: [
         'Ext.MessageBox',
+        'SenchaTouchDemo.config.CustomAjaxProxy',
 
         'SenchaTouchDemo.commons.Util',
         'SenchaTouchDemo.config.setting',
-        'SenchaTouchDemo.config.memoryDataList',
-        'SenchaTouchDemo.commons.override.Store'
+        'SenchaTouchDemo.config.memoryDataList'
     ],
     /*
      * 不建议在这初始化所有views

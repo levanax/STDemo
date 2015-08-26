@@ -27,18 +27,6 @@ Ext.define('SenchaTouchDemo.store.market.MarketList', {
     proxy: {
         type: 'ajax',
         url: setting.serverUrl + 'system/orderMarkets',
-        actionMethods: {
-            create  : 'POST',
-            read    : 'POST',
-            update  : 'POST',
-            destroy : 'POST'
-        },
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        useDefaultXhrHeader: false,
-        withCredentials: true,
         reader: {
             type: 'appReaderMarket'
         }
