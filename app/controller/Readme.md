@@ -76,3 +76,6 @@ proxy: {
             type: 'appReaderMarket'
         }
     }
+
+
+routes code seat

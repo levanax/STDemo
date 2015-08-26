@@ -73,14 +73,16 @@ Ext.application({
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
+    routes: {
+    },
     init:  function(app){
         console.log('in init...');
     },
     launch: function () {
         console.log('in launch...');
+        app.init();
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-
         // Initialize the main view
         var view = Ext.create('SenchaTouchDemo.view.Login');
         Ext.Viewport.add(view);
@@ -96,5 +98,10 @@ Ext.application({
                 }
             }
         );
+    },
+    listeners:{
+        redirectTo:function(){
+            console.log('in redire to ...')
+        }
     }
 });

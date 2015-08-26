@@ -7,9 +7,16 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
 
     ],
     config:{
-        //views写在此处作用是：若views 未初始化，便自动初始化
+        //views写在此处作用有：若views 未初始化，便自动初始化
         views:['SenchaTouchDemo.view.Viewer'],
         refs:{
+            viewer:{
+                selector:'viewer', //must property
+                xtype:'viewer',
+                type: 'slide',
+                direction: 'right',
+                autoCreate:true
+            },
             navView:'viewer',
             tabView:'main'
         },
@@ -21,6 +28,12 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
             navView:{
                 back:'back'
             }
+        },
+        before:{
+            goViewer:'routesIntercept' //[router method name : intercept name]
+        },
+        routes:{
+            'viewer':'goViewer'
         }
     },
     changeTitle:function(container,value,oldValue,eOpts ){
@@ -34,5 +47,17 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
         }
     },
     changeTitle2:function(container,eOpts ){
+    },
+    routesIntercept:function(action){
+        console.log('in routes intercept ...');
+        if(app.user.isOnline()){
+            action.resume();
+        }else{
+
+        }
+    },
+    goViewer:function(){
+        //this.getViewer().show();
+        Ext.Viewport.setActiveItem(this.getViewer());
     }
 });

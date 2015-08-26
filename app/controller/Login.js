@@ -12,21 +12,20 @@ Ext.define('SenchaTouchDemo.controller.Login', {
 
     config: {
         /*views: [
-            'SenchaTouchDemo.view.Login' //避免在ctrl -> config 引入view
+            'SenchaTouchDemo.view.Login' //在ctrl -> config 初始化view
         ],*/
         control: {
             loginButton: {
-                tap: 'doLogin'
+                tap: function(thisP,eP,eOptsP){
+                    this.doLogin(thisP,eP,eOptsP,this);
+                }
             }
         },
         refs: {
             loginButton: 'button[itemId=loginBtn]'
-        },
-        routes:{
-            'toMainPanel':'toMain'
         }
     },
-    doLogin: function (thisP, eP, eOptsP) {
+    doLogin: function (thisP, eP, eOptsP,thisR) {
         //表单验证
         var params = thisP.up('login').getValues();
         var model = Ext.create('SenchaTouchDemo.model.verify.Login', params);
@@ -62,13 +61,8 @@ Ext.define('SenchaTouchDemo.controller.Login', {
                             autoLoad:true,
                             data:data
                         })
-                        console.log(i18n.t("button.login"))
-
-                        Ext.Viewport.setActiveItem(
-                            'viewer', {
-                                type: 'slide',
-                                direction: 'right'
-                            });
+                        app.user.setUsername(params.name);
+                        thisR.redirectTo('viewer');
                     }
                 }
             });
@@ -77,16 +71,7 @@ Ext.define('SenchaTouchDemo.controller.Login', {
             var errorChar = errors.all[0]._message;
             util.Msg.alert(errorChar);
         }
-    },
-    toMain:function(){
-        console.log('in to main ...')
-        Ext.Viewport.setActiveItem(
-            'main', {
-                type: 'slide',
-                direction: 'right'
-            });
     }
-
 });
 
 //

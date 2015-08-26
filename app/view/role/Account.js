@@ -38,9 +38,21 @@ Ext.define('SenchaTouchDemo.view.role.Account',{
                     ]
                 },
                 {
-                    title: 'My Account',
                     xtype: 'button',
                     text: 'logout',
+                    height:20,
+                    handler: function() {
+                        // use the push() method to push another view. It works much like
+                        // add() or setActiveItem(). it accepts a view instance, or you can give it
+                        // a view config.
+
+                        var roleAccountView = Ext.getCmp('viewer');
+                        roleAccountView.push(Ext.create('SenchaTouchDemo.view.secondary.Second'));
+                    }
+                },
+                {
+                    xtype: 'button',
+                    text: 'language',
                     height:20,
                     handler: function() {
                         // use the push() method to push another view. It works much like

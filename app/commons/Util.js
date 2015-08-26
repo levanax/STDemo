@@ -2,7 +2,7 @@
  * Created by Levana.Xue on 8/19/2015.
  */
 Ext.define('SenchaTouchDemo.commons.Util',{
-    alternateClassName:'util',
+    alternateClassName:['util','app'],
     statics:{
         Msg:{
             /* custom message component */
@@ -38,6 +38,42 @@ Ext.define('SenchaTouchDemo.commons.Util',{
                         1200);
                 }
             }
+        },
+        Viewport:{
+            setActiveItem:function(xtype){
+                Ext.Viewport.setActiveItem(xtype, {
+                    type: 'slide',
+                    direction: 'right'
+                });
+            },
+            addListen:function () {
+                //监控Viewport界面切换,切换时销毁旧项
+                var me = Ext.Viewport;
+                me.onAfter('activeitemchange',
+                    function (t, value, oldValue, eOpts) {
+                        if (oldValue) {
+                            me.remove(oldValue, true);
+                        }
+                    });
+            }
+        },
+        user:{
+            username:null,
+            setUsername:function(name){
+                this.username = name;
+            },
+            isOnline:function(){
+                if(this.username == null){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        },
+        init:function(){
+            console.log('******** init app ******');
+            this.Msg.initMsgComponent();
+            this.Viewport.addListen();
         }
     }
 });
