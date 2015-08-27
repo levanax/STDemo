@@ -10,12 +10,16 @@
  will need to resolve manually.
  */
 Ext.onReady(function () {
+    var startTime, execTime;
+    startTime = new Date().getTime();
     var option = {
         resGetPath: 'locales/__lng__/translation.json',
         lng: "zh",
         getAsync: false
     };
     i18n.init(option);
+    execTime = new Date().getTime() - startTime;
+    console.info('>>>> Language plug-in initialization time is : '+execTime +'ms');
 })
 Ext.Loader.setPath({
     'ux':'app/ux'
@@ -52,6 +56,7 @@ Ext.application({
      * controllers
      */
     controllers: [
+        'router.Routers',
         'Viewer',
         'Login',
         'market.Trade',
