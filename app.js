@@ -9,21 +9,10 @@
  changes and its generated code, it will produce a "merge conflict" that you
  will need to resolve manually.
  */
-Ext.onReady(function () {
-    var startTime, execTime;
-    startTime = new Date().getTime();
-    var option = {
-        resGetPath: 'locales/__lng__/translation.json',
-        lng: "zh",
-        getAsync: false
-    };
-    i18n.init(option);
-    execTime = new Date().getTime() - startTime;
-    console.info('>>>> Language plug-in initialization time is : '+execTime +'ms');
-})
 Ext.Loader.setPath({
     'ux':'app/ux'
 })
+
 Ext.application({
     name: 'SenchaTouchDemo',
     appFolder:'app',
@@ -82,9 +71,6 @@ Ext.application({
         '1496x2048': 'resources/startup/1496x2048.png'
     },
     routes: {
-    },
-    init:  function(app){
-        console.log('in init...');
     },
     launch: function () {
         console.log('in launch...');
