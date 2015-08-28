@@ -10,6 +10,6 @@ Ext.define('SenchaTouchDemo.model.OrderType',{
     }
 });
 
-/*
+/**
  * json data 结构过于复杂，只做临时处理
- * /
+ */

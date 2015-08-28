@@ -9,6 +9,8 @@
  * metadata-driven class system features
  */
 Ext.Loader.addClassPathMappings({
+  "AppReader": "app/store/role/Account.js",
+  "AppReaderMarket": "app/store/market/MarketList.js",
   "Ext": "touch/src",
   "Ext-more": "touch/src/core/Ext-more.js",
   "Ext.Boot": ".sencha/app/Boot.js",
@@ -32,10 +34,14 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "SenchaTouchDemo": "app"
+  "SenchaTouchDemo": "app",
+  "SenchaTouchDemo.model.OrderType": "app/model/market/OrderType.js",
+  "SenchaTouchDemo.model.OrderTypeName": "app/model/market/OrderTypeName.js"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "AppReader": [],
+  "AppReaderMarket": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -532,6 +538,17 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
+  "Ext.log.Base": [],
+  "Ext.log.Logger": [],
+  "Ext.log.filter.Filter": [],
+  "Ext.log.filter.Priority": [],
+  "Ext.log.formatter.Default": [],
+  "Ext.log.formatter.Formatter": [],
+  "Ext.log.formatter.Identity": [],
+  "Ext.log.writer.Console": [],
+  "Ext.log.writer.DocumentTitle": [],
+  "Ext.log.writer.Remote": [],
+  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -657,11 +674,56 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
+  "SenchaTouchDemo.commons.Util": [
+    "util",
+    "app"
+  ],
+  "SenchaTouchDemo.config.CustomAjaxProxy": [],
+  "SenchaTouchDemo.config.memoryDataList": [
+    "constant"
+  ],
+  "SenchaTouchDemo.config.setting": [
+    "setting"
+  ],
+  "SenchaTouchDemo.controller.Login": [],
+  "SenchaTouchDemo.controller.Viewer": [],
+  "SenchaTouchDemo.controller.market.Trade": [],
+  "SenchaTouchDemo.controller.market.Tradebuy": [],
+  "SenchaTouchDemo.controller.role.OrderBook": [],
+  "SenchaTouchDemo.controller.router.Routers": [],
+  "SenchaTouchDemo.model.OrderType": [],
+  "SenchaTouchDemo.model.OrderTypeName": [],
+  "SenchaTouchDemo.model.Sessioninfo": [],
+  "SenchaTouchDemo.model.market.Market": [],
+  "SenchaTouchDemo.model.role.Account": [],
+  "SenchaTouchDemo.model.role.OrderBook": [],
+  "SenchaTouchDemo.model.role.Userdata": [],
+  "SenchaTouchDemo.model.verify.Login": [],
+  "SenchaTouchDemo.store.OrderType": [],
+  "SenchaTouchDemo.store.Sessioninfo": [],
+  "SenchaTouchDemo.store.market.MarketList": [],
+  "SenchaTouchDemo.store.role.Account": [],
+  "SenchaTouchDemo.store.role.OrderBook": [],
   "SenchaTouchDemo.view.Login": [],
-  "SenchaTouchDemo.view.Main": []
+  "SenchaTouchDemo.view.Main": [],
+  "SenchaTouchDemo.view.Setting": [],
+  "SenchaTouchDemo.view.Viewer": [],
+  "SenchaTouchDemo.view.market.Trade": [],
+  "SenchaTouchDemo.view.market.Tradebuy": [],
+  "SenchaTouchDemo.view.market.Tradesell": [],
+  "SenchaTouchDemo.view.role.Account": [],
+  "SenchaTouchDemo.view.role.OrderBook": [],
+  "SenchaTouchDemo.view.secondary.Second": [],
+  "SenchaTouchDemo.view.secondary.Three": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "AppReader": [
+    "reader.appReader"
+  ],
+  "AppReaderMarket": [
+    "reader.appReaderMarket"
+  ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -1239,6 +1301,17 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
+  "Ext.log.Base": [],
+  "Ext.log.Logger": [],
+  "Ext.log.filter.Filter": [],
+  "Ext.log.filter.Priority": [],
+  "Ext.log.formatter.Default": [],
+  "Ext.log.formatter.Formatter": [],
+  "Ext.log.formatter.Identity": [],
+  "Ext.log.writer.Console": [],
+  "Ext.log.writer.DocumentTitle": [],
+  "Ext.log.writer.Remote": [],
+  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -1376,11 +1449,61 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "SenchaTouchDemo.commons.Util": [],
+  "SenchaTouchDemo.config.CustomAjaxProxy": [],
+  "SenchaTouchDemo.config.memoryDataList": [],
+  "SenchaTouchDemo.config.setting": [],
+  "SenchaTouchDemo.controller.Login": [],
+  "SenchaTouchDemo.controller.Viewer": [],
+  "SenchaTouchDemo.controller.market.Trade": [],
+  "SenchaTouchDemo.controller.market.Tradebuy": [],
+  "SenchaTouchDemo.controller.role.OrderBook": [],
+  "SenchaTouchDemo.controller.router.Routers": [],
+  "SenchaTouchDemo.model.OrderType": [],
+  "SenchaTouchDemo.model.OrderTypeName": [],
+  "SenchaTouchDemo.model.Sessioninfo": [],
+  "SenchaTouchDemo.model.market.Market": [],
+  "SenchaTouchDemo.model.role.Account": [],
+  "SenchaTouchDemo.model.role.OrderBook": [],
+  "SenchaTouchDemo.model.role.Userdata": [],
+  "SenchaTouchDemo.model.verify.Login": [],
+  "SenchaTouchDemo.store.OrderType": [],
+  "SenchaTouchDemo.store.Sessioninfo": [],
+  "SenchaTouchDemo.store.market.MarketList": [],
+  "SenchaTouchDemo.store.role.Account": [],
+  "SenchaTouchDemo.store.role.OrderBook": [],
   "SenchaTouchDemo.view.Login": [
     "widget.login"
   ],
   "SenchaTouchDemo.view.Main": [
     "widget.main"
+  ],
+  "SenchaTouchDemo.view.Setting": [
+    "widget.setting"
+  ],
+  "SenchaTouchDemo.view.Viewer": [
+    "widget.viewer"
+  ],
+  "SenchaTouchDemo.view.market.Trade": [
+    "widget.marketTrade"
+  ],
+  "SenchaTouchDemo.view.market.Tradebuy": [
+    "widget.marketTradebuy"
+  ],
+  "SenchaTouchDemo.view.market.Tradesell": [
+    "widget.marketTradesell"
+  ],
+  "SenchaTouchDemo.view.role.Account": [
+    "widget.roleAccount"
+  ],
+  "SenchaTouchDemo.view.role.OrderBook": [
+    "widget.orderBook"
+  ],
+  "SenchaTouchDemo.view.secondary.Second": [
+    "widget.second"
+  ],
+  "SenchaTouchDemo.view.secondary.Three": [
+    "widget.three"
   ]
 });
 
