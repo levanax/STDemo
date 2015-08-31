@@ -3,15 +3,17 @@
  */
 Ext.define('SenchaTouchDemo.store.Sessioninfo',{
     extend:'Ext.data.Store',
-    storeId:'sessioninfo',
     requires:[
         'SenchaTouchDemo.model.Sessioninfo'
     ],
-    model:'SenchaTouchDemo.model.Sessioninfo',
-    proxy:{
-        type:'memory',
-        reader:{
-            type:'json'
+    config:{
+        storeId:'sessioninfo',
+        model:'SenchaTouchDemo.model.Sessioninfo',
+        proxy:{
+            type:'memory',
+            reader:{
+                type:'json'
+            }
         }
     }
 });

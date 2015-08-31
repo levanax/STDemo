@@ -27,10 +27,11 @@ Ext.application({
     /*
      * 不建议在这初始化所有views
      */
-    /*views: [
+    views: [
+     'Login'
+     /*,
      'Viewer',
      'Main',
-     'Login',
      'Setting',
      'market.Trade',
      'market.Tradebuy',
@@ -38,8 +39,8 @@ Ext.application({
      'role.Account',
      'role.OrderBook',
      'secondary.Second',
-     'secondary.Three'
-     ],*/
+     'secondary.Three'*/
+     ],
 
     /*
      * controllers

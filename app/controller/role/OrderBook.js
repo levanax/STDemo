@@ -4,7 +4,8 @@
 Ext.define('SenchaTouchDemo.controller.role.OrderBook',{
     extend:'Ext.app.Controller',
     requires:[
-        'SenchaTouchDemo.model.role.Userdata'
+        'SenchaTouchDemo.model.role.Userdata',
+        'SenchaTouchDemo.store.role.OrderBook'
     ],
     config:{
         refs:{

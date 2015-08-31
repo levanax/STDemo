@@ -17,3 +17,5 @@ try{
     console.error(e);
 }
 // load language end.
+
+//切换语言 可以做遮罩 然后刷新页面来实现

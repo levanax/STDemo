@@ -24,6 +24,7 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
         }
     },
     changeTitle:function(container,value,oldValue,eOpts ){
+        console.log(value)
         this.getNavView().getNavigationBar().setTitle(value.title);
     },
     back:function(container,eOpts ){

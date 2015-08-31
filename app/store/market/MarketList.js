@@ -18,19 +18,21 @@ Ext.define('AppReaderMarket', {
 
 Ext.define('SenchaTouchDemo.store.market.MarketList', {
     extend: 'Ext.data.Store',
-    storeId: 'marketList',
-    autoLoad: false,
     requires: [
         'SenchaTouchDemo.model.market.Market'
     ],
-    model: 'SenchaTouchDemo.model.market.Market',
-    proxy: {
-        type: 'ajax',
-        url: setting.serverUrl + 'system/orderMarkets',
-        reader: {
-            type: 'appReaderMarket'
+    config:{
+        storeId: 'marketList',
+        autoLoad: false,
+        model: 'SenchaTouchDemo.model.market.Market',
+        proxy: {
+            type: 'ajax',
+            url: setting.serverUrl + 'system/orderMarkets',
+            reader: {
+                type: 'appReaderMarket'
+            }
+        },
+        listeners: {
         }
-    },
-    listeners: {
     }
 });

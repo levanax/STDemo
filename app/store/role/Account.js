@@ -11,16 +11,18 @@ Ext.define('AppReader',{
 });
 Ext.define('SenchaTouchDemo.store.role.Account',{
     extend:'Ext.data.Store',
-    storeId:'account',
     requires:[
         'SenchaTouchDemo.model.role.Account'
     ],
-    model:'SenchaTouchDemo.model.role.Account',
-    proxy:{
-        type: 'memory',
-        reader:{
-            type:'appReader',
-            rootProperty:'Account'
+    config:{
+        model:'SenchaTouchDemo.model.role.Account',
+        storeId:'account',
+        proxy:{
+            type: 'memory',
+            reader:{
+                type:'appReader',
+                rootProperty:'Account'
+            }
         }
     }
 });

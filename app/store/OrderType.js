@@ -3,9 +3,11 @@
  */
 Ext.define('SenchaTouchDemo.store.OrderType',{
     extend:'Ext.data.Store',
-    StoreId:'orderTypeStroe',
     requires:[],
-    model:"SenchaTouchDemo.model.OrderType",
-    proxy:{
+    config:{
+        storeId:'orderTypeStroe',
+        model:"SenchaTouchDemo.model.OrderType",
+        proxy:{
+        }
     }
 });
