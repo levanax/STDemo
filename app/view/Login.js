@@ -1,7 +1,6 @@
 /**
  * Created by Levana.Xue on 8/7/2015.
  */
-console.log('login view ....');
 Ext.define('SenchaTouchDemo.view.Login', {
     extend: 'Ext.form.Panel',
     id:'login',

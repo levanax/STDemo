@@ -8,6 +8,13 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
     ],
     config:{
         refs:{
+            login:{
+                selector:'login', //must property
+                xtype:'login',
+                type: 'slide',
+                direction: 'right',
+                autoCreate:true
+            },
             viewer:{
                 selector:'viewer', //must property
                 xtype:'viewer',
@@ -20,16 +27,21 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
             goViewer:'routesIntercept' //[router method name : intercept name]
         },
         routes:{
+            'login':'goLogin',
             'viewer':'goViewer'
         }
     },
     routesIntercept:function(action){
-        console.log('in routes intercept here...');
+        //console.log('in routes intercept here...');
         if(app.user.isOnline()){
             action.resume();
         }else{
 
         }
+    },
+    goLogin:function(){
+        //this.getViewer().show();
+        Ext.Viewport.setActiveItem(this.getLogin());
     },
     goViewer:function(){
         //this.getViewer().show();

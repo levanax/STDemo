@@ -18,7 +18,13 @@ Ext.define('SenchaTouchDemo.view.Main',{
             cls:'tabBarStyle'
         },
         fullscreen: true,
-        layout:'card',
+        layout:{
+            type: 'card',
+            animation: {
+                type: 'slide',
+                direction: 'left'
+            }
+        },
         listeners:{
         },
         items: [

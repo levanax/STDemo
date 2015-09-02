@@ -1,7 +1,6 @@
 /**
  * Created by Levana.Xue on 8/10/2015.
  */
-console.log('in model ...')
 Ext.define('SenchaTouchDemo.model.verify.Login', {
     extend:'Ext.data.Model',
     config:{

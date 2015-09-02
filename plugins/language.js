@@ -2,12 +2,15 @@
  * Created by Levana.Xue on 8/28/2015.
  */
 // load language start
+var locals = {
+    language:'zh'
+};
 try{
     var startTime, execTime;
     startTime = new Date().getTime();
     var option = {
         resGetPath: 'locales/__lng__/translation.json',
-        lng: "zh",
+        lng: locals.language,
         getAsync: false
     };
     i18n.init(option);

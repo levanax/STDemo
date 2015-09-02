@@ -10,7 +10,6 @@
  will need to resolve manually.
  */
 Ext.Loader.setPath({
-    'ux':'app/ux'
 })
 
 Ext.application({
@@ -18,9 +17,12 @@ Ext.application({
     appFolder:'app',
     requires: [
         'Ext.MessageBox',
+        'Ext.device.Device',
         'SenchaTouchDemo.config.CustomAjaxProxy',
+        'SenchaTouchDemo.commons.override.PickerDate',
 
         'SenchaTouchDemo.commons.Util',
+        'SenchaTouchDemo.commons.Db',
         'SenchaTouchDemo.config.setting',
         'SenchaTouchDemo.config.memoryDataList'
     ],
@@ -74,13 +76,13 @@ Ext.application({
     routes: {
     },
     launch: function () {
-        console.log('in launch...');
         app.init();
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
-        var view = Ext.create('SenchaTouchDemo.view.Login');
-        Ext.Viewport.add(view);
+        //var view = Ext.create('SenchaTouchDemo.view.Login');
+        //Ext.Viewport.add(view);
+        this.redirectTo('login');
     },
 
     onUpdated: function () {

@@ -39,8 +39,8 @@ Ext.define('SenchaTouchDemo.view.role.Account',{
                 },
                 {
                     xtype: 'button',
-                    text: 'logout',
-                    height:20,
+                    text: 'language',
+                    cls:'leftText-btn',
                     handler: function() {
                         // use the push() method to push another view. It works much like
                         // add() or setActiveItem(). it accepts a view instance, or you can give it
@@ -52,15 +52,10 @@ Ext.define('SenchaTouchDemo.view.role.Account',{
                 },
                 {
                     xtype: 'button',
-                    text: 'language',
-                    height:20,
+                    text: 'logout',
+                    cls:'leftText-btn',
                     handler: function() {
-                        // use the push() method to push another view. It works much like
-                        // add() or setActiveItem(). it accepts a view instance, or you can give it
-                        // a view config.
-
-                        var roleAccountView = Ext.getCmp('viewer');
-                        roleAccountView.push(Ext.create('SenchaTouchDemo.view.secondary.Second'));
+                        //this.redirectTo('login');
                     }
                 }
             ]

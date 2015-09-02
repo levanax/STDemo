@@ -29,7 +29,7 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
     back:function(container,eOpts ){
         var activeItem = container.getActiveItem();
         if(activeItem.getId() === 'main'){
-            var title = activeItem.getActiveItem().title;
+            var title = activeItem.getActiveItem().initialConfig.title;
             this.getNavView().getNavigationBar().setTitle(title);
         }
     },
