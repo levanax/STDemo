@@ -13,6 +13,24 @@ Ext.define('SenchaTouchDemo.view.role.Account',{
         disableSelection: true,
             items:[
                 {
+                    xtype:'toolbar',
+                    docked:'top',
+                    title:'Test',
+                    items:[
+                        {
+                            xtype:'button',
+                            text:'btn1'
+                        },
+                        {
+                            xtype:'spacer'
+                        },
+                        {
+                            xtype:'button',
+                            text:'btn2'
+                        }
+                    ]
+                },
+                {
                     xtype:'fieldset',
                     title:'theme',
                     items:[

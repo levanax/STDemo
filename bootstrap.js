@@ -671,6 +671,7 @@ Ext.ClassManager.addNameAlternateMappings({
     "util",
     "app"
   ],
+  "SenchaTouchDemo.commons.override.PickerDate": [],
   "SenchaTouchDemo.config.CustomAjaxProxy": [],
   "SenchaTouchDemo.config.memoryDataList": [
     "constant"
@@ -1433,6 +1434,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.WindowsPhone": [],
   "SenchaTouchDemo.commons.Db": [],
   "SenchaTouchDemo.commons.Util": [],
+  "SenchaTouchDemo.commons.override.PickerDate": [],
   "SenchaTouchDemo.config.CustomAjaxProxy": [],
   "SenchaTouchDemo.config.memoryDataList": [],
   "SenchaTouchDemo.config.setting": [],
