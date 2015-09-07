@@ -28,3 +28,6 @@ This folder contains the forms
 
 >\SenchaTouchDemo\resources\sass>compass compile
 >sencha app build testing
+
+used phonegap plugins:
+https://github.com/litehelpers/Cordova-sqlite-storage/tree/028e351

@@ -664,7 +664,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "SenchaTouchDemo.commons.Db": [
+  "SenchaTouchDemo.commons.Sqlite": [
     "Db"
   ],
   "SenchaTouchDemo.commons.Util": [
@@ -1432,7 +1432,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "SenchaTouchDemo.commons.Db": [],
+  "SenchaTouchDemo.commons.Sqlite": [],
   "SenchaTouchDemo.commons.Util": [],
   "SenchaTouchDemo.commons.override.PickerDate": [],
   "SenchaTouchDemo.config.CustomAjaxProxy": [],

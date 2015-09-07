@@ -22,7 +22,7 @@ Ext.application({
         'SenchaTouchDemo.commons.override.PickerDate',
 
         'SenchaTouchDemo.commons.Util',
-        'SenchaTouchDemo.commons.Db',
+        'SenchaTouchDemo.commons.Sqlite',
         'SenchaTouchDemo.config.setting',
         'SenchaTouchDemo.config.memoryDataList'
     ],

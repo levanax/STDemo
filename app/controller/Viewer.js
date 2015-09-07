@@ -19,14 +19,20 @@ Ext.define('SenchaTouchDemo.controller.Viewer',{
                 show:'changeTitle2'
             },
             navView:{
-                back:'back'
+                back:'back',
+                push:'pushHandle'
             }
         }
+    },
+    pushHandle:function(){
+        app.viewerPushCount++;
     },
     changeTitle:function(container,value,oldValue,eOpts ){
         this.getNavView().getNavigationBar().setTitle(value.initialConfig.title);
     },
     back:function(container,eOpts ){
+        app.viewerPushCount--;
+
         var activeItem = container.getActiveItem();
         if(activeItem.getId() === 'main'){
             var title = activeItem.getActiveItem().initialConfig.title;

@@ -134,21 +134,33 @@ Ext.define('SenchaTouchDemo.commons.Util', {
                     break;
             }
         },
+        viewerPushCount:0,
+        onDeviceReady:function(){
+            var test = 'Device platform: ' + Ext.device.Device.platform + '<br />' +
+                'Device name: ' + Ext.device.Device.name + '<br />' +
+                'Device UUID: ' + Ext.device.Device.uuid
+            app.Msg.alert(test);
+            Db.init();
+
+
+            //listen back button ,exit app
+            var onBackKeyDown = function(){
+                var current = Ext.Viewport.getActiveItem().getId();
+                if(app.viewerPushCount === 0 &&
+                    (current === "viewer" || current === 'login')){
+                    navigator.app.exitApp();
+                }
+            }
+            document.addEventListener("backbutton",onBackKeyDown,false);
+
+        },
         init: function () {
             window.onerror = this.errorDirector;
             this.Msg.initMsgComponent();
             this.Viewport.addListen();
             this.overrideDatePicker();
             this.overrideAjax();
-
-            document.addEventListener("deviceready", onDeviceReady, false);
-            function onDeviceReady() {
-                var test = 'Device platform: ' + Ext.device.Device.platform + '<br />' +
-                    'Device name: ' + Ext.device.Device.name + '<br />' +
-                    'Device UUID: ' + Ext.device.Device.uuid
-                app.Msg.alert(test);
-                //Db.init();
-            }
+            document.addEventListener("deviceready", this.onDeviceReady, false);
         }
     }
 });
