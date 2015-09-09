@@ -4,6 +4,7 @@
 Ext.define('SenchaTouchDemo.config.memoryDataList',{
     alternateClassName:'constant',
     statics:{
-        userDataId:'001' //用户登入记录id
+        userDataId:'001', //用户登入记录id
+        loginUser:'002'
     }
 });

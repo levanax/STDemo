@@ -3,6 +3,7 @@
  */
 Ext.define('SenchaTouchDemo.model.role.Userdata', {
     extend: 'Ext.data.Model',
+    requires: ['Ext.data.JsonP'],
     config: {
         fileds: [
             'UserId',

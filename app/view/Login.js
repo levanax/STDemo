@@ -27,13 +27,11 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 xtype: 'textfield',
                 name: 'name',
                 autoComplete: false,
-                placeHolder: 'Enter your username',
-                value: 'mftst01'
+                placeHolder: 'Enter your username'
             }, {
                 xtype: 'passwordfield',
                 autoComplete: false,
                 name: 'password',
-                value: '123456789',
                 maxLength: 16,
                 placeHolder: 'Enter your password'
             }]
