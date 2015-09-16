@@ -6,7 +6,8 @@ Ext.define('SenchaTouchDemo.view.role.Account',{
     id:'roleAccount',
     xtype:'roleAccount',
     requires:[
-        'Ext.field.Radio'
+        'Ext.field.Radio',
+        'SenchaTouchDemo.view.secondary.Second'
     ],
     config:{
         title: 'My Account',

@@ -20,3 +20,8 @@ Ext.apply(Ext.data.Types,{
         type: 'market'
     }
 });
+
+[WARN][Ext.data.Batch#runOperation] Your identifier generation strategy for the model does not ensure unique id's. Please use the UUID strategy, or implement your own identifier strategy with the flag isUnique.
+- identifier:{ type:'uuid' }
+
+

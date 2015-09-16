@@ -14,6 +14,12 @@ Ext.define('SenchaTouchDemo.view.role.OrderBook', {
         scrollable: {
             disabled: true
         },
+        /*plugins: [
+            {
+                xclass: 'Ext.plugin.PullRefresh',
+                pullText: 'Pull down for more new!'
+            }
+        ],*/
         styleHtmlCls:'tableStyle-div-title',
         styleHtmlContent: true,
         html: [

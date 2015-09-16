@@ -59,7 +59,10 @@ Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
                     autoComplete: false,
                     label: 'Price',
                     placeHolder: '',
-                    value: ''
+                    defaultValue:0,
+                    component : {
+                        disabled : false
+                    }
                 }, {
                     xtype: 'spinnerfield',
                     name: 'quantity',
@@ -68,7 +71,10 @@ Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
                     autoComplete: false,
                     label: 'Quantity',
                     placeHolder: '',
-                    value: ''
+                    defaultValue:0,
+                    component : {
+                        disabled : false
+                    }
                 }, {
                     xtype: 'datepickerfield',
                     name: 'date',
@@ -93,7 +99,7 @@ Ext.define('SenchaTouchDemo.view.market.Tradebuy',{
                             xtype: 'button',
                             ui: 'normal',
                             action:'submit',
-                            text: 'Login',
+                            text: 'Submit',
                             itemId: 'submit',
                             width: '40%'
                         }

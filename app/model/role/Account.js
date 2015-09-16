@@ -3,13 +3,22 @@
  */
 Ext.define('SenchaTouchDemo.model.role.Account', {
     extend: 'Ext.data.Model',
+    requires:[
+    ],
     config: {
         fields: [
-            {name:'AccNum',type:'int'},
+            {name:'AccNum',type:'string'},
             {name:'CucyCode',type:'string'},
             {name:'AccStatus',type:'string'},
             {name:'exhibit',type:'string',convert:function(v,record){
-                var result = record.get('AccNum') + ' ' + record.get('CucyCode')
+                var accnum = record.get('AccNum');
+                var typeChar = accnum.substring(9, 10);
+                if (typeChar == "1" || typeChar == "8") {
+                    accType = "CASH";
+                } else {
+                    accType = "MARGIN";
+                }
+                var result = accnum + ' '+accType+' ' + record.get('CucyCode')
                 return result;
             }}
         ]

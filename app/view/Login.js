@@ -10,7 +10,8 @@ Ext.define('SenchaTouchDemo.view.Login', {
         'Ext.form.FieldSet',
         'Ext.field.Text',
         'Ext.field.Password',
-        'SenchaTouchDemo.controller.Login'
+        'SenchaTouchDemo.controller.Login',
+        'SenchaTouchDemo.plugin.SamplePlugin'
     ],
 
     config: {
@@ -27,7 +28,11 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 xtype: 'textfield',
                 name: 'name',
                 autoComplete: false,
-                placeHolder: 'Enter your username'
+                placeHolder: 'Enter your username',
+                plugins:[{
+                    type: 'sampleplugin',
+                    pluginId: 'sampleplugin'
+                }]
             }, {
                 xtype: 'passwordfield',
                 autoComplete: false,

@@ -26,7 +26,6 @@ This folder contains the forms
 //养成习惯： view 需要引用view ，先在requires内引入 再用，controller 也一样
 
 
->\SenchaTouchDemo\resources\sass>compass compile
 >sencha app build testing
 
 used phonegap plugins:

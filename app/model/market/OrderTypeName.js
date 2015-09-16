@@ -3,11 +3,15 @@
  */
 Ext.define('SenchaTouchDemo.model.OrderTypeName',{
     extend:'Ext.data.Model',
+    requires:[
+        'SenchaTouchDemo.model.OrderType'
+    ],
     config:{
         fields:[
-            'LangCode',
-            'CntyCode',
-            '$t'
-        ]
+            {name:'LangCode',type:'string'},
+            {name:'CntyCode',type:'string'},
+            {name:'$t',type:'string'}
+        ],
+        belongsTo:['SenchaTouchDemo.model.OrderType']
     }
 });

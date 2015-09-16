@@ -21,4 +21,4 @@ try{
 }
 // load language end.
 
-//切换语言 可以做遮罩 然后刷新页面来实现
+//切换语言 可以 restart app

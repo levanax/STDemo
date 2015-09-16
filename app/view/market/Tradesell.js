@@ -96,7 +96,7 @@ Ext.define('SenchaTouchDemo.view.market.Tradesell',{
                             xtype: 'button',
                             ui: 'normal',
                             action:'submit',
-                            text: 'Login',
+                            text: 'Submit',
                             itemId: 'submit',
                             width: '40%'
                         }

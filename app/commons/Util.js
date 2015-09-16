@@ -66,7 +66,7 @@ Ext.define('SenchaTouchDemo.commons.Util', {
                 });
             },
             addListen: function () {
-                //监控Viewport界面切换,切换时销毁旧项
+                //Viewport界面切换,切换时销毁旧项
                 var me = Ext.Viewport;
                 me.onAfter('activeitemchange',
                     function (t, value, oldValue, eOpts) {
@@ -152,7 +152,6 @@ Ext.define('SenchaTouchDemo.commons.Util', {
                 }
             }
             document.addEventListener("backbutton",onBackKeyDown,false);
-
         },
         init: function () {
             window.onerror = this.errorDirector;
@@ -160,7 +159,88 @@ Ext.define('SenchaTouchDemo.commons.Util', {
             this.Viewport.addListen();
             this.overrideDatePicker();
             this.overrideAjax();
+
+            Ext.data.Types.OrdTypeNameArray = {
+                convert: function(v, data) {
+                    console.log(data)
+                    return new VELatLong(data.lat, data.long);
+                },
+                sortType: function(v) {
+                    return v.Latitude;  // When sorting, order by latitude
+                },
+                type: 'OrdTypeNameArray'
+            };
+
+            //Ext.get(document).addListener();
             document.addEventListener("deviceready", this.onDeviceReady, false);
+            this.test();
+        },
+        test:function(){
+            Ext.define('Product', {
+                extend: 'Ext.data.Model',
+                config: {
+                    identifier:{
+                        type:'sequential'
+                    },
+                    fields: [
+                        {name: 'name',    type: 'string'}
+                    ],
+                    proxy: {
+                        type: "sql"
+                    }
+                }
+            });
+            Ext.define("User", {
+                extend: "Ext.data.Model",
+                config: {
+                    identifier:{
+                        type:'sequential'
+                    },
+                    fields: [ "firstName", "lastName" ],
+                    hasMany: {model: 'Product', name: 'products'}
+                },
+                proxy: {
+                    type: "sql"
+                }
+            });
+
+            Ext.define('testReader', {
+                extend: 'Ext.data.reader.Json',
+                alias: 'reader.testReader',
+                getResponseData: function (response) {
+                    var data = this.callParent([response]);
+                    var result = [];
+                    console.log(response)
+                    return result;
+                }
+            });
+
+            Ext.create("Ext.data.Store", {
+                model: "User",
+                storeId: "Users",
+                proxy:{
+                    reader:{
+                        type:'testReader'
+                    }
+                }
+            });
+            var user = Ext.getStore("Users");
+            user.add({
+                firstName: "Polly",
+                lastName: "Hedra"
+            });
+            var products = user.getAt(0).products();
+            products.add({
+                name:'TEST0000005555550'
+            })
+            products.add({
+                name:'TEST0000005555550999999999'
+            })
+            products.sync();
+            user.sync();
+            console.log(user)
+            gTest = user;
+            console.log(user.getAt(0))
         }
     }
 });

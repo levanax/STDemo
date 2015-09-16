@@ -3,13 +3,29 @@
  */
 Ext.define('SenchaTouchDemo.model.OrderType',{
     extend:'Ext.data.Model',
+    requires:[
+    ],
     config:{
+        identifier:{
+            type:'sequential',
+            prefix:'ot_',
+            seed:1000
+        },
         fields:[
-            'OrderTicket'
-        ]
+            {name:'GTD',type:'string'},
+            {name:'OrdType',type:'string'},
+            {name:'OrdTypeName'}
+        ]/*,
+        associations:[{
+            type:'hasMany',
+            name:'OrdTypeNames',
+            model:'SenchaTouchDemo.model.OrderTypeName',
+            autoLoad: true,
+            associationKey:'OrdTypeName'
+        }]*/,
+        hasMany:[{
+            model:'SenchaTouchDemo.model.OrderTypeName',
+            name:'OrdTypeName'
+        }]
     }
 });
-
-/**
- * json data 结构过于复杂，只做临时处理
- */

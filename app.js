@@ -9,9 +9,6 @@
  changes and its generated code, it will produce a "merge conflict" that you
  will need to resolve manually.
  */
-Ext.Loader.setPath({
-})
-
 Ext.application({
     name: 'SenchaTouchDemo',
     appFolder:'app',
@@ -30,8 +27,7 @@ Ext.application({
      * 不建议在这初始化所有views
      */
     views: [
-     'Login'
-     /*,
+     /*'Login',
      'Viewer',
      'Main',
      'Setting',

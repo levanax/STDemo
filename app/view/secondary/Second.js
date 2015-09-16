@@ -6,7 +6,7 @@ Ext.define('SenchaTouchDemo.view.secondary.Second',{
     id:'second',
     xtype:'second',
     requires:[
-
+        'SenchaTouchDemo.view.secondary.Three'
     ],
     config:{
         disableSelection: true,

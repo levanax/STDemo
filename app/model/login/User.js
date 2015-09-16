@@ -3,7 +3,14 @@
  */
 Ext.define('SenchaTouchDemo.model.login.User', {
     extend:'Ext.data.Model',
+    requires:[
+        'Ext.data.proxy.SessionStorage'
+    ],
     config:{
+        identifier:{
+            type:'uuid',
+            version:'4'
+        },
         fields:[
             'name',
             {name:'password',type:'string'}

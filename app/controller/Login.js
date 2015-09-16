@@ -10,9 +10,9 @@ Ext.define('SenchaTouchDemo.controller.Login', {
         'SenchaTouchDemo.store.Sessioninfo'
     ],
     config: {
-        /*views: [
+        views: [
             'SenchaTouchDemo.view.Login' //在ctrl -> config 初始化view
-        ],*/
+        ],
         control: {
             loginButton: {
                 tap: function(thisP,eP,eOptsP){
@@ -57,10 +57,7 @@ Ext.define('SenchaTouchDemo.controller.Login', {
                         //save login info
                         var loginUserStore = Ext.create('SenchaTouchDemo.store.login.User');
                         loginUserStore.load();
-                        if(Ext.isObject(loginUserStore.getAt(0))){
-                            loginUserStore.removeAt(0);
-                            loginUserStore.sync();
-                        }
+                        loginUserStore.removeAll(false);
                         loginUserStore.add(params);
                         loginUserStore.sync();
 
@@ -86,11 +83,11 @@ Ext.define('SenchaTouchDemo.controller.Login', {
             });
         } else {
             //console.log(errors.getByField('password'));
-            var errorChar = '';
+            var errorChar = [];
             Ext.each(errors.items,function(rec){
-                errorChar += rec.getMessage()+'<br/>';
+                errorChar.push(rec.getMessage());
             });
-            util.Msg.alert(errorChar);
+            util.Msg.alert(errorChar.join('<br/>'));
         }
     }
 });

@@ -3,9 +3,16 @@
  */
 Ext.define('SenchaTouchDemo.model.market.Market',{
     extend:'Ext.data.Model',
+    requires:[
+        'Ext.data.proxy.LocalStorage'
+    ],
     config:{
         fields:[
             {name:'market',type:'string'}
-        ]
+        ],
+        proxy: {
+            type: 'localstorage',
+            id  : 'market-name'
+        }
     }
 });

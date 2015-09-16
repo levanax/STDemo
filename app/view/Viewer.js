@@ -7,7 +7,6 @@ Ext.define('SenchaTouchDemo.view.Viewer', {
     xtype: 'viewer',
     autoDestroy:false,
     requires: [
-        'SenchaTouchDemo.controller.Viewer',
         'SenchaTouchDemo.view.Main'
     ],
     config: {

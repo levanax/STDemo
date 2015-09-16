@@ -53,3 +53,74 @@ sorters:[
             //read data
             var accountsStore = Ext.data.StoreManager.lookup('account');
             this.getAccountSel().setStore(accountsStore);
+
+
+/*Ext.require(["Ext.data.proxy.SQL"]);
+
+Ext.define("User", {
+    extend: "Ext.data.Model",
+    config: {
+        fields: [ "firstName", "lastName" ]
+    }
+});
+
+Ext.create("Ext.data.Store", {
+    model: "User",
+    storeId: "Users",
+    proxy: {
+        type: "sql"
+    }
+});
+
+Ext.getStore("Users").add({
+    firstName: "Polly",
+    lastName: "Hedra"
+});
+
+Ext.getStore("Users").sync();*/
+
+
+
+
+
+
+---------------------------------------------
+Ext.define('Product', {
+                extend: 'Ext.data.Model',
+                config: {
+                    fields: [
+                        {name: 'name',    type: 'string'}
+                    ],
+                    proxy: {
+                        type: "sql"
+                    }
+                }
+            });
+            Ext.define("User", {
+                extend: "Ext.data.Model",
+                config: {
+                    fields: [ "firstName", "lastName" ],
+                    hasMany: {model: 'Product', name: 'products'}
+                },
+                proxy: {
+                    type: "sql"
+                }
+            });
+
+            Ext.create("Ext.data.Store", {
+                model: "User",
+                storeId: "Users"
+            });
+            var user = Ext.getStore("Users");
+            user.add({
+                firstName: "Polly",
+                lastName: "Hedra"
+            });
+            var products = user.getAt(0).products();
+            products.add({
+                name:'TEST0000000'
+            })
+            products.sync();
+            user.sync();
+            console.log(user)
+----------------------------------------------
