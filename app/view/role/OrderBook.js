@@ -14,31 +14,32 @@ Ext.define('SenchaTouchDemo.view.role.OrderBook', {
         scrollable: {
             disabled: true
         },
-        /*plugins: [
+        items:[
             {
-                xclass: 'Ext.plugin.PullRefresh',
-                pullText: 'Pull down for more new!'
+                xtype: 'selectfield',
+                name:'account',
+                itemId:'accountOB',
+                displayField:'exhibit',
+                valueField:'AccNum'
             }
-        ],*/
-        styleHtmlCls:'tableStyle-div-title',
+        ],
+        styleHtmlCls:['table-tr-style-div','table-tr-style-title-div'],
         styleHtmlContent: true,
         html: [
-            '<div>',
             '<div class=\'firstChild\'>LastExecTime</div>',
-            '<div>OrdID</div>',
+            /*'<div>OrdID</div>',*/
             '<div>Security</div>',
             '<div>OrdSide</div>',
             '<div>OrdType</div>',
             '<div>OrdQty</div>',
             '<div>Price</div>',
-            '</div>'
         ].join(""),
-        baseCls: 'tableStyle-div',
+        itemCls: 'table-tr-style-div',
         itemTpl: new Ext.XTemplate(
             '<tpl for=".">',
             '<tpl if="this.isShow(OrdID)">',
             '<div class=\'firstChild\'>{LastExecTime}</div>',
-            '<div>{OrdID}</div>',
+            /*'<div>{OrdID}</div>',*/
             '<div>{SecuritySctyID}.{SecurityMktCode}</div>',
             '<div>{OrdSide}</div>',
             '<div>{OrdType}</div>',
@@ -53,7 +54,6 @@ Ext.define('SenchaTouchDemo.view.role.OrderBook', {
                 }
             }
         ),
-        store: Ext.create('SenchaTouchDemo.store.role.OrderBook'),
         listeners:{
             itemsingletap:function(dataview,index,item,record,e){
                 console.log('you click '+this.getStore().getAt(index).get('OrdID'));

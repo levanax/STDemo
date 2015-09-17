@@ -31,20 +31,21 @@ Ext.define('SenchaTouchDemo.view.Main',{
             {
                 title: 'Order',
                 iconCls: 'compose',
+                layout: 'fit',
                 items:{
-                    xtype: 'marketTrade',
-                    height:'500em'
+                    xtype: 'marketTrade'
                 }
             },
             {
                 title: 'OrderBook',
                 iconCls: 'bookmarks',
+                layout: 'fit',
                 scrollable: {
                     indicators: false //隐藏滚动条
                 },
                 items:{
                     xtype:'orderBook',
-                    cls:'FullscreenStyle'
+                    /*cls:'FullscreenStyle',*/
                 }
             },
             {

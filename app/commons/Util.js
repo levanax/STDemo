@@ -4,6 +4,18 @@
 Ext.define('SenchaTouchDemo.commons.Util', {
     alternateClassName: ['util', 'app'],
     statics: {
+        Account:{
+            getSelAccountData:function(accNumP){
+                var result = null;
+                Ext.getStore('account').each(function (item, index, length) {
+                    var accNumTemp = item.get('AccNum');
+                    if(accNumTemp === accNumP){
+                        result =item;
+                    }
+                })
+                return result;
+            }
+        },
         Msg: {
             /* custom message component */
             msgComponentInit: false,
@@ -238,9 +250,9 @@ Ext.define('SenchaTouchDemo.commons.Util', {
             })
             products.sync();
             user.sync();
-            console.log(user)
+           // console.log(user)
             gTest = user;
-            console.log(user.getAt(0))
+            //console.log(user.getAt(0))
         }
     }
 });

@@ -9,23 +9,52 @@ Ext.define('SenchaTouchDemo.controller.role.OrderBook',{
     ],
     config:{
         refs:{
-            orderBookView:'orderBook'
+            orderBookView:'orderBook',
+            accountCom:'selectfield[itemId=accountOB]'
         },
+        comAccountSel:null,
         control:{
             orderBookView:{
                 initialize:'initializer'
+            },
+            accountCom:{
+                change:function( thisP, newValue, oldValue,eOpts){
+
+                }
             }
         }
     },
     initializer:function(){
-        var userData = Ext.ModelManager.getModel('SenchaTouchDemo.model.role.Userdata');
-        userData.load(constant.userDataId,{
-            scope:this,
-            success:function(cached){
-                //console.log(cached.data)
+        var accountsStore = Ext.data.StoreManager.lookup('account');
+        this.getAccountCom().setStore(accountsStore);
+        GobleAccountCom = this.getAccountCom()
+        var accNum = this.getAccountCom().getValue();
+        var cucyCode = app.Account.getSelAccountData(accNum).get('CucyCode');
+
+        var sessioninfoStore = Ext.data.StoreManager.lookup('sessioninfo');
+        var sessId = sessioninfoStore.getAt(0).get('SessId');
+        var params = {
+            sessId: sessId,
+            accNum: accNum,
+            cucyCode: cucyCode
+        };
+        Ext.Ajax.request({
+            url:setting.serverUrl +'stock/accountOrderHistory',
+            method: 'POST',
+            params: params,
+            withCredentials: true,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            useDefaultXhrHeader: false,
+            success: function (response) {
+                var data = Ext.decode(response.responseText);
+                var obStore = Ext.create('SenchaTouchDemo.store.role.OrderBook')
+                obStore.add(data.Account.OrdHist.Order)
+                obStore.sync();
+                Ext.getCmp('orderBook').setStore(obStore);
             }
         });
-
-        var tempdata = Ext.data.StoreManager.lookup('orderBook');
     }
 });

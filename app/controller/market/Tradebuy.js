@@ -27,7 +27,6 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
     launch: function () {
     },
     initializer: function ( thisP, eOpts ) {
-        console.log('in here ...');
         //init account select
         var accountsStore = Ext.data.StoreManager.lookup('account');
         this.getAccountSel().setStore(accountsStore);
@@ -73,7 +72,7 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
                             Ext.getStore("orderTypeSell").sync();
                         }
                     }
-                    console.log(Ext.getStore("orderTypeBuy"))
+                    //console.log(Ext.getStore("orderTypeBuy"))
                     //console.log(Ext.getStore("orderTypeBuy").getModel())
                 }
             })
