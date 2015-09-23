@@ -9,6 +9,13 @@
  changes and its generated code, it will produce a "merge conflict" that you
  will need to resolve manually.
  */
+Ext.Loader.setConfig ({
+    enabled: true ,
+    paths: {
+        'Ext.ux.touch.MultistateButton': 'app/ux/touch/MultistateButton.js'
+    }
+});
+
 Ext.application({
     name: 'SenchaTouchDemo',
     appFolder:'app',
@@ -17,6 +24,7 @@ Ext.application({
         'Ext.device.Device',
         'SenchaTouchDemo.config.CustomAjaxProxy',
         'SenchaTouchDemo.commons.override.PickerDate',
+        'Ext.ux.touch.MultistateButton',
 
         'SenchaTouchDemo.commons.Util',
         'SenchaTouchDemo.commons.Sqlite',

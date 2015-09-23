@@ -35,7 +35,7 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
         var sessId = sessioninfoStore.getAt(0).get('SessId')
 
         var marketlist = Ext.create('SenchaTouchDemo.store.market.MarketList',{
-            autoSync:true,
+            /*autoSync:true,*/
             params:{
                 sessId:sessId
             }
@@ -64,11 +64,11 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
                         var ordType = ordTypes[i];
                         if(ordType.OrdSide === 'B'){
                             Ext.create("SenchaTouchDemo.store.market.OrderTypeBuy");
-                            Ext.getStore("orderTypeBuy").add(ordType.OrderType);
+                            Ext.getStore("orderTypeBuy").addData(ordType.OrderType);
                             Ext.getStore("orderTypeBuy").sync();
                         }else{
                             Ext.create("SenchaTouchDemo.store.market.OrderTypeSell");
-                            Ext.getStore("orderTypeSell").add(ordType.OrderType);
+                            Ext.getStore("orderTypeSell").addData(ordType.OrderType);
                             Ext.getStore("orderTypeSell").sync();
                         }
                     }
@@ -77,7 +77,6 @@ Ext.define('SenchaTouchDemo.controller.market.Tradebuy', {
                 }
             })
         },this);
-        marketlist.sync();
         this.getMarketSel().setStore(marketlist);
     }
 });

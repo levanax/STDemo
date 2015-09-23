@@ -6,7 +6,8 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
     requires: [
     ],
     config:{
-        cmp: null
+        cmp: null,
+        lableImg:''
     },
     constructor: function(config) {
         this.initConfig(config);
@@ -16,6 +17,9 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
         this.setCmp(cmp);
         var me = this;
         console.log('in here plugins ...');
+        console.log(this)
+        console.log(cmp.element.dom)
+        this.setImgLable(cmp);
         cmp.on({
             initialize:me.initializePlug,
             /*initialize:{
@@ -30,5 +34,12 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
     },
     destroy:function(){
 
+    },
+    setImgLable:function(cmp){
+        var imgEle = document.createElement("div");
+        imgEle.style.backgroundImage = "url('"+this.getLableImg()+"')";
+        var extImgEle = new Ext.dom.Element(imgEle);
+        cmp.element.down('.x-field-input').insertFirst(extImgEle);
+        console.log(extImgEle)
     }
 });

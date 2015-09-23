@@ -20,7 +20,7 @@ Ext.define('SenchaTouchDemo.model.role.OrderBook',{
         fields:[
             'OrdID',
             {name:'SecurityMktCode',mapping:'Security.MktCode',type:'string'},
-            {name:'SecuritySctyID',mapping:'Security.SctyID',type:'int'},
+            {name:'SecuritySctyID',mapping:'Security.SctyID',type:'string'},
             'GrpOrdID',
             {name:'OrdSide',type:'string',convert:function(val){
                 if(val =="B"){

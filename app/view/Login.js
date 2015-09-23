@@ -3,7 +3,7 @@
  */
 Ext.define('SenchaTouchDemo.view.Login', {
     extend: 'Ext.form.Panel',
-    id:'login',
+    id: 'login',
     xtype: 'login',
 
     requires: [
@@ -17,11 +17,11 @@ Ext.define('SenchaTouchDemo.view.Login', {
     config: {
         disableSelection: true,
         items: [{
-                docked: 'top',
-                xtype: 'titlebar',
-                title: i18n.t('INDEX_TITLE')
+            docked: 'top',
+            xtype: 'titlebar',
+            title: i18n.t('INDEX_TITLE')
         }, {
-            height:30
+            height: 30
         }, {
             xtype: 'fieldset',
             items: [{
@@ -29,8 +29,9 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 name: 'name',
                 autoComplete: false,
                 placeHolder: 'Enter your username',
-                plugins:[{
+                plugins: [{
                     type: 'sampleplugin',
+                    lableImg:'img/test.png',
                     pluginId: 'sampleplugin'
                 }]
             }, {
@@ -45,38 +46,49 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 xtype: 'button',
                 centered: true,
                 ui: 'action',
-                action:'login',
-                text:i18n.t("LOGIN.LOGIN_BTN"),
+                action: 'login',
+                text: i18n.t("LOGIN.LOGIN_BTN"),
                 itemId: 'loginBtn',
                 width: '95%',
-                handler: function() {
+                handler: function () {
                     // use the push() method to push another view. It works much like
                     // add() or setActiveItem(). it accepts a view instance, or you can give it
                     // a view config.
                     //console.log('in handler .......');
                 }
             }
-        }]/*,
-        listeners: [
+        }/*,
             {
-                delegate: '#loginBtn',// the itemId property
-                event: 'tap',
-                fn: 'doLogin'
-            }
-        ]*//*,
-        control: {
-            'button[itemId=loginBtn]': {
-                tap: 'doLogin'
-            }
-        }*/
+                xtype: 'multistatebutton',
+                width: 100,
+                height: 50,
+                text: 'Buy now',
+                afterText: 'Install',
+                handler: function () {
+                    Ext.Msg.alert('Thank you');
+                }
+            }*/
+        ]/*,
+         listeners: [
+         {
+         delegate: '#loginBtn',// the itemId property
+         event: 'tap',
+         fn: 'doLogin'
+         }
+         ]*//*,
+         control: {
+         'button[itemId=loginBtn]': {
+         tap: 'doLogin'
+         }
+         }*/
 
     }/*,
-    doLogin:function(thisP,eP, eOptsP){
-        console.log('in doLogin  ...');
-        console.log(thisP.up('app-login').getValues());
-    }*/
+     doLogin:function(thisP,eP, eOptsP){
+     console.log('in doLogin  ...');
+     console.log(thisP.up('app-login').getValues());
+     }*/
 });
 /*
-*requires : 该 define 需要用到的组件
-*
-*/
+ *requires : 该 define 需要用到的组件
+ *
+ */

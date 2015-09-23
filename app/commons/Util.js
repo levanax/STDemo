@@ -116,19 +116,19 @@ Ext.define('SenchaTouchDemo.commons.Util', {
             //ajax setting
             Ext.Ajax.on('beforerequest',
                 function (connection, options) {
-                    if (!options.hidMessage) {
-                        app.Msg.alert('loading ...');
-                    }
+                    app.Msg.alert('loading ...');
                 });
             Ext.Ajax.on('requestcomplete',
-                function (connection, options) {
+                function (conn, response, options, eOpts ) {
                     app.Msg.hideMsgComponent();
+                    var data = Ext.decode(response.responseText);
+                    if (typeof data.Reject !== 'undefined') {
+                        app.Msg.alert('response error : ' + data.Reject.SysMsg,false);
+                    }
                 });
             Ext.Ajax.on('requestexception',
-                function (connection, options) {
-                    if (!options.hidMessage) {
-                        app.Msg.alert('loaded fail ...', false);
-                    }
+                function (conn, response, options, eOpts) {
+                    app.Msg.alert('loaded fail ...', false);
                 });
         },
         overrideDatePicker: function () {
