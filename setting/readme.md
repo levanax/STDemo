@@ -1,0 +1,1 @@
+setting.json - 配置文件

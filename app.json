@@ -114,7 +114,8 @@
         "resources/images",
         "resources/icons",
         "resources/startup",
-        "locales"
+        "locales",
+        "setting"
     ],
 
     /**

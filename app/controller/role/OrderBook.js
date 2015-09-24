@@ -53,7 +53,7 @@ Ext.define('SenchaTouchDemo.controller.role.OrderBook',{
                 var obStore = Ext.create('SenchaTouchDemo.store.role.OrderBook')
                 obStore.addData(data.Account.OrdHist.Order)
                 obStore.sync();
-                Ext.getCmp('orderBook').setStore(obStore);
+                Ext.getCmp('orderBookList').setStore(obStore);
             }
         });
     }

@@ -39,13 +39,13 @@ Ext.define('SenchaTouchDemo.view.Main',{
             {
                 title: 'OrderBook',
                 iconCls: 'bookmarks',
-                layout: 'fit',
                 scrollable: {
                     indicators: false //隐藏滚动条
                 },
                 items:{
                     xtype:'orderBook',
-                    /*cls:'FullscreenStyle',*/
+                    height:500
+                    /*cls:'FullscreenStyle'*/
                 }
             },
             {
