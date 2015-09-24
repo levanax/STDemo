@@ -37,8 +37,11 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
     },
     setImgLable:function(cmp){
         var imgEle = document.createElement("div");
-        imgEle.style.backgroundImage = "url('"+this.getLableImg()+"')";
+        imgEle.style.backgroundImage = "url("+this.getLableImg()+")";
         var extImgEle = new Ext.dom.Element(imgEle);
+        extImgEle.addCls('inputPlugin');
+        cmp.element.addCls('custom-plugin-style');
+        //extImgEle.set({'data-content':"T"});
         cmp.element.down('.x-field-input').insertFirst(extImgEle);
         console.log(extImgEle)
     }

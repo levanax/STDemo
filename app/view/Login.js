@@ -31,7 +31,7 @@ Ext.define('SenchaTouchDemo.view.Login', {
                 placeHolder: 'Enter your username',
                 plugins: [{
                     type: 'sampleplugin',
-                    lableImg:'img/test.png',
+                    lableImg:'/resources/icons/Icon_Android36.png',
                     pluginId: 'sampleplugin'
                 }]
             }, {

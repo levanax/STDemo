@@ -107,6 +107,20 @@
         .leftText-btn span.x-button-label{
             text-align: left;
         }
+
+        div.custom-plugin-style div.inputPlugin{
+             width: 50px;
+             height: 40px;
+             position: absolute;
+             top:0;
+         }
+         div.custom-plugin-style input.x-input-text{
+             padding-left: 54px;;
+         }
+        div.inputPlugin::before{
+            content:attr(data-content);
+            background-image: url(resources/icons/Icon_Android36.png);
+        }
     </style>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src=".sencha/app/microloader/development.js"></script>
