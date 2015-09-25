@@ -21,6 +21,13 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
                 type: 'slide',
                 direction: 'right',
                 autoCreate:true
+            },
+            test:{
+                selector:'test',
+                xtype:'test',
+                type: 'slide',
+                direction: 'right',
+                autoCreate:true
             }
         },
         before:{
@@ -28,7 +35,8 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
         },
         routes:{
             'login':'goLogin',
-            'viewer':'goViewer'
+            'viewer':'goViewer',
+            'test':'goTest'
         }
     },
     routesIntercept:function(action){
@@ -46,5 +54,8 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
     goViewer:function(){
         //this.getViewer().show();
         Ext.Viewport.setActiveItem(this.getViewer());
+    },
+    goTest:function(){
+        Ext.Viewport.setActiveItem(this.getTest());
     }
 });

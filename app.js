@@ -12,7 +12,7 @@
 Ext.Loader.setConfig ({
     enabled: true ,
     paths: {
-        'Ext.ux.touch.MultistateButton': 'app/ux/touch/MultistateButton.js'
+        'Ext.ux': 'app/ux'
     }
 });
 
@@ -24,6 +24,11 @@ Ext.application({
         'Ext.device.Device',
         'SenchaTouchDemo.config.CustomAjaxProxy',
         'SenchaTouchDemo.commons.override.PickerDate',
+
+        'Ext.ux.side.Side',
+        'Ext.ux.side.Bar',
+        'Ext.ux.side.Panel',
+
         'Ext.ux.touch.MultistateButton',
 
         'SenchaTouchDemo.commons.Util',
@@ -46,6 +51,7 @@ Ext.application({
      'role.OrderBook',
      'secondary.Second',
      'secondary.Three'*/
+        'SenchaTouchDemo.view.test.Test'
      ],
 
     /*
@@ -86,7 +92,7 @@ Ext.application({
         // Initialize the main view
         //var view = Ext.create('SenchaTouchDemo.view.Login');
         //Ext.Viewport.add(view);
-        this.redirectTo('login');
+        this.redirectTo('test');
     },
 
     onUpdated: function () {

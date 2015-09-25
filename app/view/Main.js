@@ -13,6 +13,7 @@ Ext.define('SenchaTouchDemo.view.Main',{
     config: {
         title:'Order',
         tabBarPosition: 'bottom',
+        ui:'light',
         tabBar:{
             width:'100%',
             cls:'tabBarStyle'
