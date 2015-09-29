@@ -90,9 +90,9 @@ Ext.application({
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
-        //var view = Ext.create('SenchaTouchDemo.view.Login');
+        //var view = Ext.create('Ext.ux.side.Panel');
         //Ext.Viewport.add(view);
-        this.redirectTo('test');
+        this.redirectTo('login');
     },
 
     onUpdated: function () {

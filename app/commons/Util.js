@@ -4,6 +4,9 @@
 Ext.define('SenchaTouchDemo.commons.Util', {
     alternateClassName: ['util', 'app'],
     statics: {
+        t:function(key){
+            return i18n.t(key);
+        },
         Account:{
             getSelAccountData:function(accNumP){
                 var result = null;
@@ -185,7 +188,7 @@ Ext.define('SenchaTouchDemo.commons.Util', {
 
             //Ext.get(document).addListener();
             document.addEventListener("deviceready", this.onDeviceReady, false);
-            this.test();
+            //this.test();
         },
         test:function(){
             Ext.define('Product', {

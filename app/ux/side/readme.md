@@ -5,3 +5,7 @@ tab panel:
 
 side panel:
 case1: docked, Vbox
+
+-
+侧边菜单栏，可重写 tab panel
+tabBarPosition: 'left'

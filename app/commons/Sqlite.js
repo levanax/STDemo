@@ -37,19 +37,6 @@ Ext.define('SenchaTouchDemo.commons.Sqlite', {
                     app.Msg.alert("ERROR: " + e.message,false);
                 });
             });
-
-            /*if(Ext.feature.has.SqlDatabase){
-             this.db = Ext.device.SQLite.openDatabase({
-             name: '2goTradeDatabase',
-             version: '1.0', // is ignored if `creationCallback` is provided
-             displayName: '2go trade',
-             estimatedSize: 2 * 1024 * 1024,
-             creationCallback: function (db) { // optional
-             // you can set database version here by calling `db.changeVersion(...)` method (see below)
-             app.Msg.alert('in db ...');
-             }
-             });
-             }*/
         }
     }
 });

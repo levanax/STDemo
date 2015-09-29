@@ -17,9 +17,9 @@ Ext.define('SenchaTouchDemo.model.login.User', {
             // ****type check
         ],
         validations: [
-            {type: 'presence',  field: 'name',message:i18n.t('USER_NAME_EMPTY')},
+            {type: 'presence',  field: 'name',message:app.t('USER_NAME_EMPTY')},
             {type: 'exclusion', field: 'name', list: ['Admin', 'Operator'],message:'not is \'Admin\''},
-            {type: 'presence',  field: 'password',message:i18n.t('PASSWORD_EMPTY')}
+            {type: 'presence',  field: 'password',message:app.t('PASSWORD_EMPTY')}
            /* {type: 'format',    field: 'password', matcher: /\d+/,message:'password invalid .'}*/
         ],
         proxy: {

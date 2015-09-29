@@ -9,28 +9,40 @@ Ext.define('Ext.ux.side.Panel',{
         'Ext.ux.side.Bar'
     ],
     config:{
-        /**
-         *menus:{
-         *
-         * }
-         */
-        menusBar:null,
-        menusBarLayout:{
+        sideBar:{
+            items:{
+                html: 'this is menus Bar ',
+                style: 'background-color: #759E60;'
+            }
+        },
+        sideBarLayout:{
             position:'left',
             direction:'left'
-        }
+        },
+        items:[
+            {
+                html: 'Awesome banner',
+                style: 'background-color: #759E60;'
+            }
+        ]
     },
-    constructor: function(config) {
-        this.initConfig(config);
-        this.callParent([config]);
+    constructor: function() {
+        this.callParent();
+
     },
-    init: function (cmp) {
+    initialize: function (cmp) {
 
     },
     destroy:function(){
 
     },
-    applyMenusBar:function(config){
+    applySideBar:function(config){
 
+    },
+    updateSideBarPosition:function(position){
+        var sideBar = this.getSideBar();
+        if (sideBar) {
+            sideBar.setDocked(position);
+        }
     }
 });

@@ -23,5 +23,25 @@ Ext.define('Ext.ux.side.Bar',{
         tpl:[
 
         ]
+    },
+    initialize:function(){
+
+    },
+    doSetDocked:function(newDocked){
+        console.log(' in doSetDocked ...')
+        var layout = this.getLayout(),
+            initialConfig = this.getInitialConfig(),
+            pack;
+
+        if(initialConfig.layout || !initialConfig.layout.pack){
+            pack = (newDocked == 'bottom') ? 'center' : 'left';
+            //layout isn't guaranteed to be instantiated so must test
+            if (layout.isLayout) {
+                layout.setPack(pack);
+            } else {
+                layout.pack = (layout && layout.pack) ? layout.pack : pack;
+            }
+        }
+        this.callParent(arguments);
     }
 });

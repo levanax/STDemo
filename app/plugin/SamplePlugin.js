@@ -16,9 +16,9 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
     init: function (cmp) {
         this.setCmp(cmp);
         var me = this;
-        console.log('in here plugins ...');
-        console.log(this)
-        console.log(cmp.element.dom)
+        //console.log('in here plugins ...');
+        //console.log(this)
+        //console.log(cmp.element.dom)
         this.setImgLable(cmp);
         cmp.on({
             initialize:me.initializePlug,
@@ -43,6 +43,5 @@ Ext.define('SenchaTouchDemo.plugin.SamplePlugin', {
         cmp.element.addCls('custom-plugin-style');
         //extImgEle.set({'data-content':"T"});
         cmp.element.down('.x-field-input').insertFirst(extImgEle);
-        console.log(extImgEle)
     }
 });
