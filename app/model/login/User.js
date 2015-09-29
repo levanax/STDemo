@@ -4,11 +4,12 @@
 Ext.define('SenchaTouchDemo.model.login.User', {
     extend:'Ext.data.Model',
     requires:[
-        'Ext.data.proxy.SessionStorage'
+        'Ext.data.proxy.SessionStorage',
+        'Ext.data.identifier.Uuid'
     ],
     config:{
         identifier:{
-            type:'uuid',
+            type:'uuid',//must ref
             version:'4'
         },
         fields:[
