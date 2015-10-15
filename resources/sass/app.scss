@@ -6,5 +6,8 @@
 
 // Custom code goes here..
 
+@import 'stylesheets/customlevana';
+@include customlevana;
+
 // Examples of using the icon mixin:
 // @include icon('user');

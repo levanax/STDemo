@@ -151,6 +151,7 @@ Ext.define('SenchaTouchDemo.commons.Util', {
         },
         viewerPushCount:0,
         onDeviceReady:function(){
+            navigator.splashscreen.hide();
             var test = 'Device platform: ' + Ext.device.Device.platform + '<br />' +
                 'Device name: ' + Ext.device.Device.name + '<br />' +
                 'Device UUID: ' + Ext.device.Device.uuid
