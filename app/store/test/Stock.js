@@ -1,0 +1,21 @@
+/**
+ * Created by Levana.Xue on 10/16/2015.
+ */
+Ext.define('SenchaTouchDemo.store.test.Stock',{
+    extend:'Ext.data.Store',
+    requires:[
+        'SenchaTouchDemo.model.test.Stock'
+    ],
+    config:{
+        autoLoad:true,
+        storeId:'stockTest',
+        model:'SenchaTouchDemo.model.test.Stock',
+        proxy:{
+            type:'ajax',
+            url:"resources/data/stockInfo.json",
+            reader:{
+                type:'json'
+            }
+        }
+    }
+});
