@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        body{
+        }
+        div.customTr{
+            list-style-type: none;
+            height: 50px;
+            min-width: 200px;
+            border: 1px solid transparent;
+            border-bottom-color: silver;
+        }
+        div.customTr div{
+            float: left;
+            line-height:50px;
+            vertical-align:middle;
+        }
+        div.customTr div:first-child{
+            width: 40%;
+        }
+        div.customTr div:first-child ul{
+            line-height: 20px;
+            margin: 2px 0px;
+            padding: 0 10px;
+        }
+        div.customTr div:first-child ul:first-child{
+            line-height: 16px;
+            font-size:0.9em;
+        }
+        div.customTr div:last-child{
+            float:right;
+            width: 30%;
+            background-color:#1AAF36;
+            color:white;
+        }
+        div.customTr div:last-child ul{
+            line-height: 20px;
+            margin: 2px 0px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="customTr">
+        <div>
+            <ul>hk 00005</ul>
+            <ul>HSBC HOLDINGS</ul>
+        </div>
+        <div>59.30</div>
+        <div>
+            <ul>+0.00</ul>
+            <ul>+0.00%</ul>
+        </div>
+    </div>
+    <div></div>
+</body>
+</html>

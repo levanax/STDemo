@@ -34,9 +34,20 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
+  "Ext.ux": "app/ux",
+  "Ext.ux.ActionOverFlowMenuButton": "touch/src/ux/ActionOverFlowMenuButton.js",
+  "Ext.ux.ApplicationMenu": "touch/src/ux/ApplicationMenu.js",
+  "Ext.ux.ContextMenu": "touch/src/ux/ContextMenu.js",
+  "Ext.ux.MenuButton": "touch/src/ux/MenuButton.js",
+  "Ext.ux.TabMenuButton": "touch/src/ux/TabMenuButton.js",
+  "Ext.ux.device": "touch/src/ux/device",
+  "Ext.ux.parse": "touch/src/ux/parse",
+  "Product": "app/commons/Util.js",
   "SenchaTouchDemo": "app",
   "SenchaTouchDemo.model.OrderType": "app/model/market/OrderType.js",
-  "SenchaTouchDemo.model.OrderTypeName": "app/model/market/OrderTypeName.js"
+  "SenchaTouchDemo.model.OrderTypeName": "app/model/market/OrderTypeName.js",
+  "User": "app/commons/Util.js",
+  "testReader": "app/commons/Util.js"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
@@ -538,17 +549,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -665,6 +665,16 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.parse.Store": [],
   "Ext.ux.parse.association.Pointer": [],
   "Ext.ux.parse.association.Relation": [],
+  "Ext.ux.side.Bar": [
+    "Ext.SideBar"
+  ],
+  "Ext.ux.side.Panel": [
+    "Ext.SidePanel"
+  ],
+  "Ext.ux.side.Side": [
+    "Ext.Side"
+  ],
+  "Ext.ux.touch.MultistateButton": [],
   "Ext.viewport.AndroidStock": [
     "Ext.viewport.Android"
   ],
@@ -674,6 +684,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
+  "Product": [],
+  "SenchaTouchDemo.commons.SampleObservable": [],
   "SenchaTouchDemo.commons.Sqlite": [
     "Db"
   ],
@@ -703,12 +715,16 @@ Ext.ClassManager.addNameAlternateMappings({
   "SenchaTouchDemo.model.role.Account": [],
   "SenchaTouchDemo.model.role.OrderBook": [],
   "SenchaTouchDemo.model.role.Userdata": [],
-  "SenchaTouchDemo.store.OrderType": [],
+  "SenchaTouchDemo.model.test.Stock": [],
+  "SenchaTouchDemo.plugin.SamplePlugin": [],
   "SenchaTouchDemo.store.Sessioninfo": [],
   "SenchaTouchDemo.store.login.User": [],
   "SenchaTouchDemo.store.market.MarketList": [],
+  "SenchaTouchDemo.store.market.OrderTypeBuy": [],
+  "SenchaTouchDemo.store.market.OrderTypeSell": [],
   "SenchaTouchDemo.store.role.Account": [],
   "SenchaTouchDemo.store.role.OrderBook": [],
+  "SenchaTouchDemo.store.test.Stock": [],
   "SenchaTouchDemo.view.Login": [],
   "SenchaTouchDemo.view.Main": [],
   "SenchaTouchDemo.view.Setting": [],
@@ -718,8 +734,12 @@ Ext.ClassManager.addNameAlternateMappings({
   "SenchaTouchDemo.view.market.Tradesell": [],
   "SenchaTouchDemo.view.role.Account": [],
   "SenchaTouchDemo.view.role.OrderBook": [],
+  "SenchaTouchDemo.view.role.OrderBookList": [],
   "SenchaTouchDemo.view.secondary.Second": [],
-  "SenchaTouchDemo.view.secondary.Three": []
+  "SenchaTouchDemo.view.secondary.Three": [],
+  "SenchaTouchDemo.view.test.Test": [],
+  "User": [],
+  "testReader": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1306,17 +1326,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -1447,6 +1456,18 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.parse.association.Relation": [
     "association.relation"
   ],
+  "Ext.ux.side.Bar": [
+    "widget.sidebar"
+  ],
+  "Ext.ux.side.Panel": [
+    "widget.sidepanel"
+  ],
+  "Ext.ux.side.Side": [
+    "widget.side"
+  ],
+  "Ext.ux.touch.MultistateButton": [
+    "widget.multistatebutton"
+  ],
   "Ext.viewport.AndroidStock": [],
   "Ext.viewport.Default": [
     "widget.viewport"
@@ -1454,6 +1475,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "Product": [],
+  "SenchaTouchDemo.commons.SampleObservable": [],
   "SenchaTouchDemo.commons.Sqlite": [],
   "SenchaTouchDemo.commons.Util": [],
   "SenchaTouchDemo.commons.override.PickerDate": [],
@@ -1474,12 +1497,18 @@ Ext.ClassManager.addNameAliasMappings({
   "SenchaTouchDemo.model.role.Account": [],
   "SenchaTouchDemo.model.role.OrderBook": [],
   "SenchaTouchDemo.model.role.Userdata": [],
-  "SenchaTouchDemo.store.OrderType": [],
+  "SenchaTouchDemo.model.test.Stock": [],
+  "SenchaTouchDemo.plugin.SamplePlugin": [
+    "plugin.sampleplugin"
+  ],
   "SenchaTouchDemo.store.Sessioninfo": [],
   "SenchaTouchDemo.store.login.User": [],
   "SenchaTouchDemo.store.market.MarketList": [],
+  "SenchaTouchDemo.store.market.OrderTypeBuy": [],
+  "SenchaTouchDemo.store.market.OrderTypeSell": [],
   "SenchaTouchDemo.store.role.Account": [],
   "SenchaTouchDemo.store.role.OrderBook": [],
+  "SenchaTouchDemo.store.test.Stock": [],
   "SenchaTouchDemo.view.Login": [
     "widget.login"
   ],
@@ -1507,11 +1536,21 @@ Ext.ClassManager.addNameAliasMappings({
   "SenchaTouchDemo.view.role.OrderBook": [
     "widget.orderBook"
   ],
+  "SenchaTouchDemo.view.role.OrderBookList": [
+    "widget.orderBookList"
+  ],
   "SenchaTouchDemo.view.secondary.Second": [
     "widget.second"
   ],
   "SenchaTouchDemo.view.secondary.Three": [
     "widget.three"
+  ],
+  "SenchaTouchDemo.view.test.Test": [
+    "widget.test"
+  ],
+  "User": [],
+  "testReader": [
+    "reader.testReader"
   ]
 });
 

@@ -1,0 +1,24 @@
+[{
+  "stockId":"00001",
+  "name": "CHEUNG KONG",
+  "price":"115.5",
+  "market":"HK",
+  "change":"+3.00",
+  "changeRate":"+0.04%"
+},
+  {
+    "stockId":"00002",
+    "name": "CHEUNG KONG",
+    "price":"115.5",
+    "market":"HK",
+    "change":"+7.00",
+    "changeRate":"+0.04%"
+  },
+  {
+    "stockId":"00003",
+    "name": "CHEUNG KONG",
+    "price":"56.5",
+    "market":"HK",
+    "change":"+3.00",
+    "changeRate":"+0.04%"
+  }]

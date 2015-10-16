@@ -8,6 +8,6 @@
 
 @import 'stylesheets/customlevana';
 @include customlevana;
-
+@include ListStyle;
 // Examples of using the icon mixin:
 // @include icon('user');
