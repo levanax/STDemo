@@ -50,8 +50,8 @@ Ext.application({
      'role.Account',
      'role.OrderBook',
      'secondary.Second',
-     'secondary.Three'*/
-        'SenchaTouchDemo.view.test.Test'
+     'secondary.Three'*/,
+        'demo.List'
      ],
 
     /*
@@ -92,7 +92,7 @@ Ext.application({
         // Initialize the main view
         //var view = Ext.create('Ext.ux.side.Panel');
         //Ext.Viewport.add(view);
-        this.redirectTo('test');
+        this.redirectTo('login');
     },
 
     onUpdated: function () {

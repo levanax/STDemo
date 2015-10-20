@@ -1,15 +1,15 @@
 /**
  * Created by Levana.Xue on 10/16/2015.
  */
-Ext.define('SenchaTouchDemo.store.test.Stock',{
+Ext.define('SenchaTouchDemo.store.demo.Stock',{
     extend:'Ext.data.Store',
     requires:[
-        'SenchaTouchDemo.model.test.Stock'
+        'SenchaTouchDemo.model.demo.Stock'
     ],
     config:{
         autoLoad:true,
-        storeId:'stockTest',
-        model:'SenchaTouchDemo.model.test.Stock',
+        storeId:'listDemo',
+        model:'SenchaTouchDemo.model.demo.Stock',
         proxy:{
             type:'ajax',
             url:"resources/data/stockInfo.json",
