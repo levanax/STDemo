@@ -92,7 +92,7 @@ Ext.application({
         // Initialize the main view
         //var view = Ext.create('Ext.ux.side.Panel');
         //Ext.Viewport.add(view);
-        this.redirectTo('login');
+        this.redirectTo('test');
     },
 
     onUpdated: function () {
