@@ -28,6 +28,7 @@ Ext.application({
         'Ext.ux.side.Side',
         'Ext.ux.side.Bar',
         'Ext.ux.side.Panel',
+        'SenchaTouchDemo.ux.override.TabMenuButton',
 
         'Ext.ux.touch.MultistateButton',
 

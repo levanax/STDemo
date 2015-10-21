@@ -61,14 +61,8 @@ Ext.define('SenchaTouchDemo.controller.router.Routers',{
     },
     goViewer:function(){
         //this.getViewer().show();
-        // Ext.Viewport.setActiveItem(this.getViewer());
-        Ext.Viewport.setActiveItem(
-            "viewer",{
-            animation:{
-                type:'slide',
-                direction: 'right'
-            }}
-        );
+        Ext.Viewport.setActiveItem(this.getViewer());
+
     },
     goTest:function(){
         Ext.Viewport.setActiveItem(this.getTest());

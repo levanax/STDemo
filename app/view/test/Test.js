@@ -10,7 +10,11 @@ Ext.define('SenchaTouchDemo.view.test.Test', {
 	config: {
 		items:[
 			{
-				xtype: 'menu'
+				xtype: 'toolbar',
+            	title: 'Test',
+				items:[{
+					xtype:'menu'
+				}]
 			}
 		]
 	},
