@@ -8,15 +8,14 @@ Ext.define('SenchaTouchDemo.view.test.Test', {
 		'SenchaTouchDemo.view.commons.Menu'
 	],
 	config: {
-		items:[
-			{
-				xtype: 'toolbar',
-            	title: 'Test',
-				items:[{
-					xtype:'menu'
-				}]
-			}
-		]
+		scrollable: true,
+		items: [{
+			xtype: 'toolbar',
+			title: 'Test',
+			items: [{
+				xtype: 'menu'
+			}]
+		}]
 	},
 	init: function() {
 		"use strict";

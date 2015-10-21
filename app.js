@@ -9,8 +9,8 @@
  changes and its generated code, it will produce a "merge conflict" that you
  will need to resolve manually.
  */
-Ext.Loader.setConfig ({
-    enabled: true ,
+Ext.Loader.setConfig({
+    enabled: true,
     paths: {
         'Ext.ux': 'app/ux'
     }
@@ -18,7 +18,7 @@ Ext.Loader.setConfig ({
 
 Ext.application({
     name: 'SenchaTouchDemo',
-    appFolder:'app',
+    appFolder: 'app',
     requires: [
         'Ext.MessageBox',
         'Ext.device.Device',
@@ -41,7 +41,7 @@ Ext.application({
      * 不建议在这初始化所有views
      */
     views: [
-     /*'Login',
+        /*'Login',
      'Viewer',
      'Main',
      'Setting',
@@ -51,9 +51,10 @@ Ext.application({
      'role.Account',
      'role.OrderBook',
      'secondary.Second',
-     'secondary.Three'*/,
+     'secondary.Three'*/
+        ,
         'demo.List'
-     ],
+    ],
 
     /*
      * controllers
@@ -84,31 +85,26 @@ Ext.application({
         '1536x2008': 'resources/startup/1536x2008.png',
         '1496x2048': 'resources/startup/1496x2048.png'
     },
-    routes: {
-    },
-    launch: function () {
-        app.init();
+    routes: {},
+    profiles: ['Tablet', 'Phone'],
+    launch: function() {
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
-        // Initialize the main view
-        //var view = Ext.create('Ext.ux.side.Panel');
-        //Ext.Viewport.add(view);
-        this.redirectTo('test');
     },
 
-    onUpdated: function () {
+    onUpdated: function() {
         Ext.Msg.confirm(
             "Application Update",
             "This application has just successfully been updated to the latest version. Reload now?",
-            function (buttonId) {
+            function(buttonId) {
                 if (buttonId === 'yes') {
                     window.location.reload();
                 }
             }
         );
     },
-    listeners:{
-        redirectTo:function(){
+    listeners: {
+        redirectTo: function() {
             console.log('in redire to ...')
         }
     }
