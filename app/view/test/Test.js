@@ -12,6 +12,7 @@ Ext.define('SenchaTouchDemo.view.test.Test', {
 		items: [{
 			xtype: 'toolbar',
 			title: 'Test',
+			docked:'top',
 			items: [{
 				xtype: 'menu'
 			}]
